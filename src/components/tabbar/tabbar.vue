@@ -3,26 +3,26 @@
 		<div class="container">
 			<div class="header-left" style="left: 10px;position: absolute;">
 				<ul class="nav navbar-nav">
-					<li><a href="/man">男装</a></li>
-					<li><a href="/women">女装</a></li>
-					<li><a href="/kid">童装</a></li>
-					<li><a href="/times">中古逸品</a></li>
-					<li><a href="/newest">最新发售</a></li>
-					<li><a href="/discount">折扣商品</a></li>
+					<li><router-link to="/man">男装</router-link></li>
+					<li><router-link to="/women">女装</router-link></li>
+					<li><router-link to="/kid">童装</router-link></li>
+					<li><router-link to="/times">中古逸品</router-link></li>
+					<li><router-link to="/newest">最新发售</router-link></li>
+					<li><router-link to="/discount">折扣商品</router-link></li>
 				</ul>
 			</div>
 			<div class="header-center">
-				<a href="/home">
+				<router-link to="/home">
 					<img src="https://static.hbx.com/bundles/hypebeastweb/images/hbx-logo.svg?1603090404" alt="HBX" class="site-header-logo loading"
 					 data-was-processed="true">
-				</a>
+				</router-link>
 			</div>
 			<div class="header-right">
 				<ul class="nav navbar-nav">
 					<li><a>搜寻</a></li>
-					<li><a href="/login">登录</a></li>
-					<li><a href="/help">帮助</a></li>
-					<li><a href="/bags">您的购物袋 (0)</a></li>
+					<li><router-link to="/login">登录</router-link></li>
+					<li><router-link to="/help">帮助</router-link></li>
+					<li><router-link to="/bags">您的购物袋 (0)</router-link></li>
 					<li><a ><img src="https://static.hbx.com/bundles/hypebeastweb/images/flags/cn.jpg?1603090404" class="loading"
 							 data-was-processed="true"> CNY</a></li>
 				</ul>
@@ -84,4 +84,8 @@
 	.header-right img {
 		width: 26px;
 	}
+	.nav>li>a:focus, .nav>li>a:hover {
+	    background: none;
+	}
+	
 </style>
