@@ -80,7 +80,7 @@
             </li>
           </ul>
         </div>
-        <div id="footer-copyright" class="d-md-block col-md-6">
+        <div id="footer-copyright" class="d-md-block col-md-6 col-xs-12">
           <div>
             <span>
               2020 
@@ -111,9 +111,11 @@ export default {
 #site-footer{
   border-top: 1px solid #000;
   padding: 30px 0;
-  font-size: 12px;
+  font-size: .12rem;
   text-transform: uppercase;
-  
+}
+#footer-copyright{
+  text-align: right;
 }
 .container{
   width: 100%;
@@ -138,7 +140,7 @@ export default {
 }
 .footer-heading{
   margin-bottom: 15px;
-  font-size: 14px;
+  font-size: .14rem;
   font-weight: 700;
 }
 .footer-body{
@@ -147,6 +149,7 @@ export default {
 .list-inline{
   padding-left: 0;
   list-style: none;
+  margin-left: -18px;
 }
 ul{
   margin-top: 0;
@@ -197,7 +200,7 @@ a{
   padding: 0;
   border-style: solid;
   border-width: 0 0 1px;
-  font-size: 1px;
+  font-size: .01px;
   box-shadow: none;
 }
 form{
@@ -225,6 +228,14 @@ input{
 }
 #footer-country>*+* {
   margin-left: 8px;
+}
+#footer-links{
+  font-weight: 700;
+}
+@media (max-width: 992px){
+  #footer-copyright{
+  text-align: left;
+  }
 }
 @media (max-width: 768px){
   .d-md-block {
