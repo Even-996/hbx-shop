@@ -2,34 +2,34 @@
   <div id="site-footer">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-3 col-xs-12">
           <div class="footer-heading">关注我们</div>
           <div id="footer-social" class="footer-body">
-            <ul class="list-inline social-icons">
+            <ul class="list-inline-icon social-icons">
               <li class="list-inline-item first">
                 <a href="" target="_blank">
-                  <i class="fab fa-fw"><img src="../assets/img/facebook.png" width="28px" height="28px"></i>
+                  <i class="fab fa-fw"><div class="iconfont icon-facebook" width="28px" height="28px"></div></i>
                 </a>
               </li>
               <li class="list-inline-item">
                 <a href="" target="_blank">
-                  <i class="fab fa-fw"><img src="../assets/img/camera.png" width="25px" height="25px"></i>
+                  <i class="fab fa-fw"><div class="iconfont icon-Instagram" width="28px" height="28px"></div></i>
                 </a>
               </li>
               <li class="list-inline-item">
                 <a href="" target="_blank">
-                  <i class="fab fa-fw"><img src="../assets/img/bird.png" width="16px" height="16px"></i>
+                  <i class="fab fa-fw"><div class="iconfont icon-twitter" width="28px" height="28px"></div></i>
                 </a>
               </li>
               <li class="list-inline-item last">
                 <a href="" target="_blank">
-                  <i class="fab fa-fw"><img src="../assets/img/weibo.png" width="25px" height="25px"></i>
+                  <i class="fab fa-fw"><div class="iconfont icon-weibo" width="28px" height="28px"></div></i>
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-3 col-xs-12 download">
           <div class="footer-heading">下载 HBX 购物应用程式</div>
           <div id="footer-app" class="footer-body">
             <a href="">
@@ -38,17 +38,17 @@
             </a>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-3 col-xs-12">
           <div class="footer-heading">订阅我们电子讯息</div>
           <div id="footer-newsletter" class="footer-body">
             <form action="" method="post">
               <input type="hidden" name="source" value="Store footer newsletter box">
-              <input type="email" name="email" placeholder="订阅我们电子讯息可获第一个订单九折优惠！" required="required" class="form-control">
+              <input type="email" name="email" placeholder="订阅我们电子讯息可获第一个订单九折优惠！" class="form-control">
               <a href="#" class="zc">注册</a>
             </form>
           </div>
         </div>
-        <div class="d-none d-sm-block col-sm-6 col-md-3">
+        <div class="d-none d-sm-block col-sm-6 col-md-3 col-xs-12">
           <div class="footer-heading">送货至</div>
           <div id="footer-country" class="footer-body">
             <img src="../assets/img/cn.jpg" class="loading">
@@ -58,9 +58,9 @@
         </div>
       </div>
       <div id="footer-lower-section">
-        <div id="footer-links" class="d-none d-md-block">
+        <div id="footer-links" class="d-none d-md-block col-md-6">
           <ul class="list-inline">
-            <li class="link-inline-item first">
+            <li class="link-inline-item">
               <a href="">关于</a>
             </li>
             <li class="list-inline-item">
@@ -80,7 +80,7 @@
             </li>
           </ul>
         </div>
-        <div id="footer-copyright">
+        <div id="footer-copyright" class="d-md-block col-md-6 col-xs-12">
           <div>
             <span>
               2020 
@@ -97,6 +97,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  
+}
+</script>
+
 
 <style scoped>
 *{
@@ -105,8 +111,11 @@
 #site-footer{
   border-top: 1px solid #000;
   padding: 30px 0;
-  font-size: 12px;
+  font-size: .12rem;
   text-transform: uppercase;
+}
+#footer-copyright{
+  text-align: right;
 }
 .container{
   width: 100%;
@@ -131,7 +140,7 @@
 }
 .footer-heading{
   margin-bottom: 15px;
-  font-size: 14px;
+  font-size: .14rem;
   font-weight: 700;
 }
 .footer-body{
@@ -140,13 +149,11 @@
 .list-inline{
   padding-left: 0;
   list-style: none;
+  margin-left: -18px;
 }
 ul{
   margin-top: 0;
   margin-bottom: 1rem;
-}
-.list-inline-item:not(:last-child){
-  margin-right: .5rem;
 }
 .list-inline-item{
   display: inline-block;
@@ -189,11 +196,10 @@ a{
   height: 40px;
 }
 #footer-newsletter .form-control{
-  text-align: right;
   padding: 0;
   border-style: solid;
   border-width: 0 0 1px;
-  font-size: 12px;
+  font-size: .01px;
   box-shadow: none;
 }
 form{
@@ -207,23 +213,8 @@ input{
   font-size: inherit;
   line-height: inherit;
 }
-/* .form-control{
-  display: block;
-  width: 100%;
-  height: calc(1.5em + .75rem + 2px);
-  padding: .375rem .75rem;
-  font-size: 1rem;  
-  font-weight: 400;
-  line-height: 1.5;
-  color: #000;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #000;
-  border-radius: 0;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-} */
 #footer-country{
-  display: flex;
+  /* display: flex; */
   align-items: center;
 }
 .loading{
@@ -237,30 +228,42 @@ input{
 #footer-country>*+* {
   margin-left: 8px;
 }
-@media (min-width: 1200px){
-  #footer-lower-section{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 20px;
+#footer-links{
   font-weight: 700;
-  line-height: 1em;
+}
+@media (max-width: 992px){
+  #footer-copyright{
+  text-align: left;
   }
 }
-/* @media (min-width: 768px){
+@media (max-width: 768px){
   .d-md-block {
     display: block!important;
   }
   .d-none {
     display: none!important;
 }
-} */
-.list-inline{
-  padding-left: 0;
-  list-style: none;
+.download{
+  margin-top: -50px;
 }
-.list-inline-item:not(:last-child){
-  margin-right: 30px;
+  .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + -42px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #000;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+}
+.list-inline-icon li{
+  margin-right: 0.1rem;
 }
 .list-inline-item{
   display: inline-block;
