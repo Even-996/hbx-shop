@@ -8,22 +8,22 @@
             <ul class="list-inline social-icons">
               <li class="list-inline-item first">
                 <a href="" target="_blank">
-                  <i class="fab fa-fw"><img src="../assets/img/facebook.png" width="28px" height="28px"></i>
+                  <i class="fab fa-fw"><div class="iconfont icon-facebook" width="28px" height="28px"></div></i>
                 </a>
               </li>
               <li class="list-inline-item">
                 <a href="" target="_blank">
-                  <i class="fab fa-fw"><img src="../assets/img/camera.png" width="25px" height="25px"></i>
+                  <i class="fab fa-fw"><div class="iconfont icon-Instagram" width="28px" height="28px"></div></i>
                 </a>
               </li>
               <li class="list-inline-item">
                 <a href="" target="_blank">
-                  <i class="fab fa-fw"><img src="../assets/img/bird.png" width="16px" height="16px"></i>
+                  <i class="fab fa-fw"><div class="iconfont icon-twitter" width="28px" height="28px"></div></i>
                 </a>
               </li>
               <li class="list-inline-item last">
                 <a href="" target="_blank">
-                  <i class="fab fa-fw"><img src="../assets/img/weibo.png" width="25px" height="25px"></i>
+                  <i class="fab fa-fw"><div class="iconfont icon-weibo" width="28px" height="28px"></div></i>
                 </a>
               </li>
             </ul>
@@ -60,7 +60,7 @@
       <div id="footer-lower-section">
         <div id="footer-links" class="d-none d-md-block">
           <ul class="list-inline">
-            <li class="link-inline-item first">
+            <li class="link-inline-item">
               <a href="">关于</a>
             </li>
             <li class="list-inline-item">
@@ -259,8 +259,8 @@ input{
   padding-left: 0;
   list-style: none;
 }
-.list-inline-item:not(:last-child){
-  margin-right: 30px;
+.list-inline li{
+  margin-right: 0.5rem;
 }
 .list-inline-item{
   display: inline-block;

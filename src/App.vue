@@ -10,7 +10,7 @@
 import changeSize from "assets/js/app_home";
 import Home from "views/home/Home";
 import Tabbar from "components/tabbar/tabbar.vue";
-import Footer from 'components/footer'
+import Footer from 'components/footer';
 export default {
   name: "App",
   components: {
@@ -19,6 +19,7 @@ export default {
   },
 };
 </script>
+
 
 <style>
 * {
