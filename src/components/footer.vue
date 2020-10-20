@@ -2,7 +2,7 @@
   <div id="site-footer">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-3 col-xs-12">
           <div class="footer-heading">关注我们</div>
           <div id="footer-social" class="footer-body">
             <ul class="list-inline-icon social-icons">
@@ -29,7 +29,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-3 col-xs-12 download">
           <div class="footer-heading">下载 HBX 购物应用程式</div>
           <div id="footer-app" class="footer-body">
             <a href="">
@@ -38,7 +38,7 @@
             </a>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-3 col-xs-12">
           <div class="footer-heading">订阅我们电子讯息</div>
           <div id="footer-newsletter" class="footer-body">
             <form action="" method="post">
@@ -48,7 +48,7 @@
             </form>
           </div>
         </div>
-        <div class="d-none d-sm-block col-sm-6 col-md-3">
+        <div class="d-none d-sm-block col-sm-6 col-md-3 col-xs-12">
           <div class="footer-heading">送货至</div>
           <div id="footer-country" class="footer-body">
             <img src="../assets/img/cn.jpg" class="loading">
@@ -58,7 +58,7 @@
         </div>
       </div>
       <div id="footer-lower-section">
-        <div id="footer-links" class="d-none d-md-block">
+        <div id="footer-links" class="d-none d-md-block col-md-6">
           <ul class="list-inline">
             <li class="link-inline-item">
               <a href="">关于</a>
@@ -80,7 +80,7 @@
             </li>
           </ul>
         </div>
-        <div id="footer-copyright">
+        <div id="footer-copyright" class="d-md-block col-md-6">
           <div>
             <span>
               2020 
@@ -197,7 +197,7 @@ a{
   padding: 0;
   border-style: solid;
   border-width: 0 0 1px;
-  font-size: 12px;
+  font-size: 1px;
   box-shadow: none;
 }
 form{
@@ -211,23 +211,8 @@ input{
   font-size: inherit;
   line-height: inherit;
 }
-/* .form-control{
-  display: block;
-  width: 100%;
-  height: calc(1.5em + .75rem + 2px);
-  padding: .375rem .75rem;
-  font-size: 1rem;  
-  font-weight: 400;
-  line-height: 1.5;
-  color: #000;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #000;
-  border-radius: 0;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-} */
 #footer-country{
-  display: flex;
+  /* display: flex; */
   align-items: center;
 }
 .loading{
@@ -241,24 +226,32 @@ input{
 #footer-country>*+* {
   margin-left: 8px;
 }
-@media (min-width: 1200px){
-  #footer-lower-section{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  font-weight: 700;
-  line-height: 1em;
-  }
-}
-/* @media (min-width: 768px){
+@media (max-width: 768px){
   .d-md-block {
     display: block!important;
   }
   .d-none {
     display: none!important;
 }
-} */
+.download{
+  margin-top: -50px;
+}
+  .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + -42px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #000;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+}
 .list-inline-icon li{
   margin-right: 0.1rem;
 }
