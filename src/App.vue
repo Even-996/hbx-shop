@@ -1,8 +1,14 @@
 <template>
   <div class="app">
     <tabbar />
+<<<<<<< Updated upstream
     <router-view></router-view>
     <Footer />
+=======
+    
+    <router-view></router-view>
+	<Footer />
+>>>>>>> Stashed changes
   </div>
 </template>
 
