@@ -43,7 +43,7 @@
           <div id="footer-newsletter" class="footer-body">
             <form action="" method="post">
               <input type="hidden" name="source" value="Store footer newsletter box">
-              <input type="email" name="email" placeholder="订阅我们电子讯息可获第一个订单九折优惠！" required="required" class="form-control">
+              <input type="email" name="email" placeholder="订阅我们电子讯息可获第一个订单九折优惠！" class="form-control">
               <a href="#" class="zc">注册</a>
             </form>
           </div>
@@ -196,7 +196,6 @@ a{
   height: 40px;
 }
 #footer-newsletter .form-control{
-  text-align: right;
   padding: 0;
   border-style: solid;
   border-width: 0 0 1px;
