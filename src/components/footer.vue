@@ -196,7 +196,6 @@ a{
   height: 40px;
 }
 #footer-newsletter .form-control{
-  text-align: right;
   padding: 0;
   border-style: solid;
   border-width: 0 0 1px;
