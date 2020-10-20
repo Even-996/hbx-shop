@@ -5,7 +5,7 @@
         <div class="col-sm-6 col-md-3">
           <div class="footer-heading">关注我们</div>
           <div id="footer-social" class="footer-body">
-            <ul class="list-inline social-icons">
+            <ul class="list-inline-icon social-icons">
               <li class="list-inline-item first">
                 <a href="" target="_blank">
                   <i class="fab fa-fw"><div class="iconfont icon-facebook" width="28px" height="28px"></div></i>
@@ -97,6 +97,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  
+}
+</script>
+
 
 <style scoped>
 *{
@@ -107,6 +113,7 @@
   padding: 30px 0;
   font-size: 12px;
   text-transform: uppercase;
+  
 }
 .container{
   width: 100%;
@@ -144,9 +151,6 @@
 ul{
   margin-top: 0;
   margin-bottom: 1rem;
-}
-.list-inline-item:not(:last-child){
-  margin-right: .5rem;
 }
 .list-inline-item{
   display: inline-block;
@@ -255,12 +259,8 @@ input{
     display: none!important;
 }
 } */
-.list-inline{
-  padding-left: 0;
-  list-style: none;
-}
-.list-inline li{
-  margin-right: 0.5rem;
+.list-inline-icon li{
+  margin-right: 0.1rem;
 }
 .list-inline-item{
   display: inline-block;

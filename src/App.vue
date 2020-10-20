@@ -1,8 +1,8 @@
 <template>
   <div class="app">
     <tabbar />
-    <Footer />
     <router-view></router-view>
+    <Footer />
   </div>
 </template>
 
