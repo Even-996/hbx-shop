@@ -84,13 +84,17 @@
 	    		</div>
 	    	</div>
 	    </div>
-	    
+	    <Brand />
 	</div>
 </template>
 
 <script>
+import Brand from '../brands/brand'
 	export default {
-		name: "Home"
+    name: "Home",
+    components:{
+      Brand
+    }
 	}
 </script>
 
