@@ -13,6 +13,12 @@ const Discount = () => import('../views/discount/Discount');
 const Login = () => import('../views/login/Login');
 const Help = () => import('../views/help/Help');
 const Bags = () => import('../views/bags/Bags');
+const Problem = () => import('../views/help/help-children/Problem');
+const Payment = () => import('../views/help/help-children/Payment');
+const Return = () => import('../views/help/help-children/Return');
+const Rule = () => import('../views/help/help-children/Rule');
+const Tax = () => import('../views/help/help-children/Tax');
+
 
 
 const routes = [
@@ -54,7 +60,33 @@ const routes = [
 	},
 	{
 	    path: '/help',
-	    component: Help
+	    component: Help,
+		children:[
+			{
+				path: '',
+				redirect: 'problem'
+			},
+			{
+				path: 'problem',
+				component: Problem
+			},
+			{
+				path: 'payment',
+				component: Payment
+			},
+			{
+				path: 'return',
+				component: Return
+			},
+			{
+				path: 'rule',
+				component: Rule
+			},
+			{
+				path: 'tax',
+				component: Tax
+			}
+		]
 	},
 	{
 	    path: '/bags',
