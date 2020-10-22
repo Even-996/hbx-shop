@@ -684,3 +684,8 @@ img {
   top: -3px;
 }
 </style>
+<style>
+.el-drawer.ltr{
+    overflow: scroll;
+}
+</style>
