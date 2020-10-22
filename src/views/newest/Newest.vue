@@ -173,7 +173,6 @@
 		},
 		methods: {
 			handleChange(val) {
-				console.log(val);
 			},
 			enter(index){
 				this.text4[index].isshow=false

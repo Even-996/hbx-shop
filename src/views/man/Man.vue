@@ -27,7 +27,7 @@
 							<h3>{{item.title}}</h3>
 							<h2>{{item.name}}</h2>
 							<p>{{item.describ}}</p>
-							<a style="margin-left: 0;">选购男装</a>
+							<a style="margin-left: 0;">立即选购</a>
 						</div>
 					</div>
 				</div>
@@ -58,7 +58,6 @@
 			loadData(){
 				getHomeMultData().then(res =>{
 					this.homeCloses =  res.data.homecloses;
-					console.log(this.homeCloses);
 				}).catch(error=>{
 
 				})

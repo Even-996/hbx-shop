@@ -109,7 +109,6 @@ import {getHomeMultData} from '../../network/home'
     	loadData(){
     		getHomeMultData().then(res =>{
     			this.homeCloses =  res.data.mancloses;
-    			console.log(this.homeCloses);
 			}).catch(error=>{
 
 			})

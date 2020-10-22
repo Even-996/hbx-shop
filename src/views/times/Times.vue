@@ -174,7 +174,7 @@
 		},
 		methods: {
 		      handleChange(val) {
-		        console.log(val);
+		        
 		      },
 				enter(index){
 					this.text4[index].isshow=false
@@ -187,8 +187,8 @@
 			loadData(){
 				getHomeMultData().then(res=>{
 					this.historyCloses = res.data.historycloses;
-					console.log(res);
-					console.log(this.historyCloses);
+					
+			
 				})
 			}
 			 },
