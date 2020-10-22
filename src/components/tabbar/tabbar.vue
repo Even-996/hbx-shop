@@ -432,6 +432,7 @@ img {
   position: absolute;
   top: 65px;
   border: 1px solid black;
+  border-top: none ;
   background-color: white;
   z-index: 1;
   margin-left: -10px;
