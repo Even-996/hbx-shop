@@ -201,6 +201,7 @@ a{
   border-width: 0 0 1px;
   font-size: .01px;
   box-shadow: none;
+  height: 0.4rem;
 }
 form{
   display: block;
