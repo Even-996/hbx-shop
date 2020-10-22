@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div>
+		<div class="hid">
 			<div class="headerone">
 				<a href="http://localhost:8080/man" title="首页">首页</a>
 				<a class="spann" title="中古逸品">中古逸品</a>
@@ -33,9 +33,35 @@
 			</div>
 			
 		</div>
+		<div class="d-md-block mdblock hidden-lg">
+			<h2>新到货品</h2>
+			<div class="container row mdselect">
+			<select  class="col-md-4 col-xs-4" >
+				<option value="筛选">筛选</option>
+				<option value="品牌">品牌</option>	
+				<option value="尺寸">尺寸</option>
+				<option value="颜色">颜色</option>
+				<option value="价格">价格 </option>
+			</select>
+			<select   class="col-md-4 col-xs-4">
+				<option value="每页显示的商品数量">每页显示的商品数量</option>
+				<option value="48">48</option>
+				<option value="72">72</option>
+				<option value="96">96</option>
+				<option value="120">120</option>
+			</select>
+			<select  class="col-md-4 col-xs-4">
+				<option value="最新置顶">最新置顶</option>
+				<option value="价格由低至高">价格由低至高</option>
+				<option value="价格由高至低">价格由高至低</option>
+			</select>
+			<!-- <span class="spantext">最新置顶</span> -->
+			</div>
+		</div>
+		
 		<div class="container ">
 			<div class="row">
-			<div class="col-lg-2">
+			<div class="col-lg-3 hid">
 				<el-collapse v-model="activeName" @change="handleChange">
 				  <el-collapse-item title="类别" name="1">
 					 <div>全部类别</div>
@@ -79,23 +105,25 @@
 				</el-collapse>
 				
 			</div>
-			<div class="col-lg-10">
-				<div class="row">
-				  <div class="col-sm-6 col-md-4" v-for="(item,index) in text4" :key="index">
+			<div class="col-lg-9 col-md-12">
+				
+				<div class="row rowfloat">
+				  <div class="col-sm-6 col-md-4 col-xs-12 col-lg-4 " v-for="(item,index) in text4" :key="index">
 				    <div class="thumbnail" id="imgtext" v-cloak>
-				      <img :src="item.src" @mouseenter="enter(index)"  v-if="item.isshow" :key="index">
-						<img :src="item.src2" @mouseleave="leave(index)" v-else />
+				       <img :src="item.src" @mouseenter="enter(index)"  v-if="item.isshow" :key="index"> 
+					    <img :src="item.src2" @mouseleave="leave(index)" v-else /> 
 				      <div class="caption">
-				        <p>{{item.p1}}</p>
-				        <p>{{item.p2}}</p>
+				       <p><a class="cur"> {{item.p1}}</a></p>
+				       <p><a class="cur"> {{item.p2}}</a></p>  
 						  <p>
-						  <span>{{item.p3}}</span>
+						  <span>CNY{{item.p3}}</span>
 						  <span>{{item.p4}}</span>
 						  </p>
 				      </div>
 				    </div>
 				  </div>
 				</div>
+				
 			</div>
 			</div>
 		</div>
@@ -112,16 +140,16 @@
 			text2:['米色','黑色','蓝色','褐色','迷彩','绿色','灰色','彩色','橙色','紫色','红色','银色','白色','黄色'],
 			text3:['CNY 501 - CNY 1,500',' CNY 1,501 - CNY 2,500','CNY 2,501 - CNY 3,500',' CNY 3,501 - CNY 4,500','CNY 5,001 或以上'],
 			text4:[
-				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fd4%2Fd1%2FJacket_2-1352b4c46aaf7a6310a57df8d639.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F56%2Fdc%2FJacket_1-d1725e1899778edfd292d38c8c80.jpg?q=60&w=460&fit=max&v=1",p1:'424',p2:'424 DENIM JACKET',p3:'CNY 3,764',p4:'美中古货品',isshow:true},
-				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fb2%2Ff8%2F2-fa9a3bc8dcce698b711ae0a11e31.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fba%2F96%2F1-06c08139f5e682bbce0925e7d353.jpg?q=60&w=460&fit=max&v=1",p1:'BALENCIAGA',p2:'BALENCIAGA LONG SLEEVE T-SHIRT',p3:'CNY 2,174',p4:'美中古货品',isshow:true},
-				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fb3%2Ffc%2FJacket_2-1c26d3606ea18ed94fffd054431e.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F56%2Fc2%2FJacket_1-8b6efe1a1db7cd8534d234a505be.jpg?q=60&w=460&fit=max&v=1",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
-				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F78%2F5a%2FSupremexTheNorthFaceMetallicMountainParka_1-6672464eefdbe372c647b5924ee3.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fc8%2Ffd%2FSupremexTheNorthFaceMetallicMountainParka_2-a9b11c1ee1341dd27cce2fc0cd23.jpg?q=60&w=460&fit=max&v=1",p1:'SUPREME',p2:'SUPREME X THE NORTH FACE METALLIC MOUNTAIN PARKA',p3:'CNY 6,037',p4:'美中古货品',isshow:true},
-				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fcd%2F36%2FSupremeDuckCamoBoxLogohoodie_1-c18c95e1baf4214e61b240e58d14.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F7e%2Fc5%2FSupremeDuckCamoBoxLogohoodie_2-7724a045baa26ee91fbf654f65ea.jpg?q=60&w=460&fit=max&v=1",p1:'SUPREME',p2:'SUPREME X DUCK CAMO BOX LOGO HOODIE',p3:'CNY 6,037',p4:'美中古货品',isshow:true},
-				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F45%2F51%2FBapeHoodieGreenCamo_1-9c7ec895a5d2c7ecc53141b7e695.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F3c%2F1c%2FBapeHoodieGreenCamo_2-b181220d84605f34040ce8beb578.jpg?q=60&w=460&fit=max&v=1",p1:'BAPE',p2:'BAPE HOODIE GREEN CAMO',p3:'CNY 1,507',p4:'美中古货品',isshow:true},
-				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F5b%2Fa2%2FBapeHoodieBlackCamo_1-99a556d49a9a2e4bb6bd715fbce4.jpg?q=60&w=460&fit=max&v=1",src2:"",p1:'BAPE',p2:'BAPE HOODIE GREEN CAMO',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
-				//{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F63%2F68%2FOff-WhiteWoolBomberJacket_1-dd53f5bb2da0b166897e7630267e.jpg?q=60&w=460&fit=max&v=1",src2:"",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
-				//{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fd6%2F68%2FCamo1-f9b24883e52d97fc1d8ea5fe7119.jpg?q=60&w=460&fit=max&v=1",src2:"",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
-				// {src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fee%2Fe5%2F12-0d6137f2193fa449e68c4e35acad.jpg?q=60&w=460&fit=max&v=1",src2:"",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
+				{src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fd4%2Fd1%2FJacket_2-1352b4c46aaf7a6310a57df8d639.jpg?q=60&w=460&fit=max&v=1",src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F56%2Fdc%2FJacket_1-d1725e1899778edfd292d38c8c80.jpg?q=60&w=460&fit=max&v=1",p1:'424',p2:'424 DENIM JACKET',p3:'3,764',p4:'美中古货品',isshow:true},
+				{src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fb2%2Ff8%2F2-fa9a3bc8dcce698b711ae0a11e31.jpg?q=60&w=460&fit=max&v=1",src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fba%2F96%2F1-06c08139f5e682bbce0925e7d353.jpg?q=60&w=460&fit=max&v=1",p1:'BALENCIAGA',p2:'BALENCIAGA LONG SLEEVE T-SHIRT',p3:'2,174',p4:'美中古货品',isshow:true},
+				{src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fb3%2Ffc%2FJacket_2-1c26d3606ea18ed94fffd054431e.jpg?q=60&w=460&fit=max&v=1",src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F56%2Fc2%2FJacket_1-8b6efe1a1db7cd8534d234a505be.jpg?q=60&w=460&fit=max&v=1",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'9,279',p4:'美中古货品',isshow:true},
+				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F78%2F5a%2FSupremexTheNorthFaceMetallicMountainParka_1-6672464eefdbe372c647b5924ee3.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fc8%2Ffd%2FSupremexTheNorthFaceMetallicMountainParka_2-a9b11c1ee1341dd27cce2fc0cd23.jpg?q=60&w=460&fit=max&v=1",p1:'SUPREME',p2:'SUPREME X THE NORTH FACE METALLIC MOUNTAIN PARKA',p3:'6,037',p4:'美中古货品',isshow:true},
+				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fcd%2F36%2FSupremeDuckCamoBoxLogohoodie_1-c18c95e1baf4214e61b240e58d14.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F7e%2Fc5%2FSupremeDuckCamoBoxLogohoodie_2-7724a045baa26ee91fbf654f65ea.jpg?q=60&w=460&fit=max&v=1",p1:'SUPREME',p2:'SUPREME X DUCK CAMO BOX LOGO HOODIE',p3:'6,037',p4:'美中古货品',isshow:true},
+				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F45%2F51%2FBapeHoodieGreenCamo_1-9c7ec895a5d2c7ecc53141b7e695.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F3c%2F1c%2FBapeHoodieGreenCamo_2-b181220d84605f34040ce8beb578.jpg?q=60&w=460&fit=max&v=1",p1:'BAPE',p2:'BAPE HOODIE GREEN CAMO',p3:'1,507',p4:'美中古货品',isshow:true},
+				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F5b%2Fa2%2FBapeHoodieBlackCamo_1-99a556d49a9a2e4bb6bd715fbce4.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F5b%2Fa2%2FBapeHoodieBlackCamo_1-99a556d49a9a2e4bb6bd715fbce4.jpg?q=60&w=460&fit=max&v=1",p1:'BAPE',p2:'BAPE HOODIE GREEN CAMO',p3:'9,279',p4:'美中古货品',isshow:true},
+				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F63%2F68%2FOff-WhiteWoolBomberJacket_1-dd53f5bb2da0b166897e7630267e.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F5b%2Fa2%2FBapeHoodieBlackCamo_1-99a556d49a9a2e4bb6bd715fbce4.jpg?q=60&w=460&fit=max&v=1",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
+				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fd6%2F68%2FCamo1-f9b24883e52d97fc1d8ea5fe7119.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F5b%2Fa2%2FBapeHoodieBlackCamo_1-99a556d49a9a2e4bb6bd715fbce4.jpg?q=60&w=460&fit=max&v=1",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
+				{src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fee%2Fe5%2F12-0d6137f2193fa449e68c4e35acad.jpg?q=60&w=460&fit=max&v=1",src2:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F5b%2Fa2%2FBapeHoodieBlackCamo_1-99a556d49a9a2e4bb6bd715fbce4.jpg?q=60&w=460&fit=max&v=1",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
 				// {src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F9e%2F50%2F21-67e0e9d9a55961a197c7001d9a0c.jpg?q=60&w=460&fit=max&v=1",src2:"",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
 				// {src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F0e%2F40%2F31-d029a70c3146aa24ce93067c0d13.jpg?q=60&w=460&fit=max&v=1",src2:"",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
 				// {src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F4c%2Fa5%2FShirt_1_1-2ec51b0418a3bcd3f9d5fae2b62b.jpg?q=60&w=460&fit=max&v=1",src2:"",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
@@ -130,7 +158,7 @@
 				],
 			isshow:true,
 			current:9999,
-			
+			region:'',
 		}	
 		},
 		methods: {
@@ -149,13 +177,54 @@
 	}
 </script>
 
-<style>
+<style scoped="scoped">
 	[v-cloak] {
 	display: none;
 	}
 
-	@media (max-width:768px) {
-		
+	@media (max-width:991px) {
+		.hid{
+			display: none;
+		}
+		.mdblock{
+			display: block;
+		}
+	}
+	@media (min-width:992px) {
+		.mdblock{
+			display: none;
+		}
+	}
+	.row .hid{
+		margin: 0rem;
+		padding: 0rem;
+	}
+	.mdblock{
+		margin: 0.16rem 0 ;
+		text-align: center;
+		width: 100%;
+	}
+	.mdselect{
+		width: 100%;
+		margin: 0;
+	}
+	.mdselect select{
+		appearance: none;
+		text-align-last: center;
+		height: 0.35rem;
+		border: none;
+		outline: none;
+		border-top: 0.01rem solid;
+		border-bottom: 0.01rem solid;
+		border-right: 0.01rem solid;
+	}
+	.mdselect select:last-child{
+		border-right: none;
+	}
+	.spantext{
+		display: flex;
+		justify-content: center;
+		position: absolute;
 	}
 	.headerone{
 		margin: 0.3rem 0.3rem;
@@ -225,6 +294,19 @@
 		margin-right: 0.1rem;
 	}
 	#imgtext p span:last-child{
+		color: #ccc;
+	}
+	.rowfloat{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.cur{
+		color: black;
+		text-decoration: none;
+	}
+	.cur:hover{
+		text-decoration: none;
+		cursor: pointer;
 		color: #ccc;
 	}
 </style>
