@@ -3,7 +3,7 @@
 		<div class="leader">
 			<div><img src="https://static.hbx.com/bundles/hypebeastweb/images/icons/empty-bag@2x.png?1603274925" /></div>
 			<p class="lea">你的购物袋没有商品</p>
-			<p><a href="../man/Man.Vue" class="led">继续购物</a> </p>
+			<p><a href="/home" class="led">继续购物</a> </p>
 			<p class="lef">如果你已选购产品，但购物车未能正确显示，可能你的浏览器设定已停用Cookie，请重新启用Cookie后再次尝试。</p>
 		</div>
 	</div>
