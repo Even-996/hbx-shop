@@ -2,12 +2,12 @@
   <div class="index">
     <el-row>
       <div class="herder_content">
-        <div style="padding-left: 10px; display: flex; align-items: center">
+        <div class="all_goods_show" style="padding-left: 10px; display: flex; align-items: center">
           <i
             class="el-icon-s-fold hidden-sm-and-up show_goods"
             @click="drawer = true"
           ></i>
-          <ul class="hidden-xs-only" v-for="(item, index) in arr1" :key="index">
+          <ul class="hidden-xs-only " v-for="(item, index) in arr1" :key="index" >
             <li
               :class="item.styles"
               @mouseover="showGoods(index)"
@@ -38,20 +38,64 @@
         </div>
         <div>
           <ul>
-            <li>搜寻</li>
+            <li class="searchs" @click="showSearch()">
+              搜寻
+              <div class="search_btn" v-show="isSearch">
+                <input  placeholder="搜寻" ref="seafor" utocomplete="off" v-model="search">
+                <img src="../../assets/img/no.png" @click="del()">
+              </div>
+            </li>
             <li class="hidden-xs-only">
               <router-link to="/login">登入</router-link>
             </li>
-            <li class="hidden-md-and-down">
+            <li class="hidden-md-and-down" @mouseover="isHelpShow=true" @mouseleave="isHelpShow=false">
               <router-link to="/help">帮助</router-link>
+              <div class="hetp_box" v-show="isHelpShow">
+                <ul>
+                  <li><router-link to="#">常见问题</router-link></li>
+                  <li><router-link to="#">送货细则</router-link></li>
+                  <li><router-link to="#">退货</router-link></li>
+                  <li><router-link to="#">在线支付</router-link></li>
+                  <li><router-link to="#">联系我们</router-link></li>
+                  <li><router-link to="#">订单状态</router-link></li>
+                </ul>
+              </div>
             </li>
-            <li><router-link to="/bags">您的购物袋(0)</router-link></li>
-            <li class="hidden-xs-only img_cna">
+            <li @mouseleave="isbagShow=false" @mouseover="isbagShow=true">
+              <router-link to="/bags">您的购物袋(0)</router-link>
+              <div class="show_bags" v-show="isbagShow">
+                <span>你的购物袋中暂时未有货品。</span><br>
+                <router-link to="#">新到货品</router-link>
+              </div>
+            </li>
+            <li class="hidden-xs-only img_cna" @mouseover="iscnyShow=true" @mouseleave="iscnyShow=false">
               <router-link to="/bags"
                 ><img
                   src="https://static.hbx.com/bundles/hypebeastweb/images/flags/cn.jpg?1603090404"
                 />CNY</router-link
               >
+              <div class="cny" v-show="iscnyShow">
+                <div class="cny_top">
+                  <h4 style="font-weight:600">语言</h4>
+                  <ul>
+                    <li><router-link to="#">ENGLISH</router-link></li>
+                    <li><router-link to="#">繁體中文</router-link></li>
+                    <li><router-link to="#">简体中文</router-link></li>
+                    <li><router-link to="#">한국어</router-link></li>
+                  </ul>
+                </div><br>
+                <div class="cny_bottom" >
+                  <h4 style="font-weight:600">运送目的地 / 地区</h4>
+                  <ul>
+                    <li><router-link to="#"></router-link></li>
+                    <li><router-link to="#"></router-link></li>
+                    <li><router-link to="#"></router-link></li>
+                    <li><router-link to="#"></router-link></li>
+                    <li><router-link to="#"></router-link></li>
+                    <li><router-link to="#"></router-link></li>
+                  </ul>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -106,6 +150,13 @@ export default {
             drawer: false,
              count: 0,
              ishow:null,
+             isHelpShow:false,
+             isbagShow:false,
+             iscnyShow:false,
+             isSearch:false,
+             search:'',
+             num:0,
+             num1:0,
              arr1:[
                  {
                      path:'/man',
@@ -242,30 +293,61 @@ export default {
                      title:'新到货品',
                      goods:['新到货品','新到货品最','新T恤','最新帽衫','最新饰品配件','精选T裇','HBX 户外风格']
                  }
+             ],
+             [
+                 {
+                     title:'',
+                     goods:['日志','中古逸品']
+                 },
              ]
              ]
         }
+    },
+    created () {
+      document.body.addEventListener('touchstart', function(){ })
+      document.addEventListener('click',e=>{
+        const searchs=document.getElementsByClassName("searchs")[0]
+        const app=document.getElementsByClassName("app")[0]
+        if(searchs.contains(e.target)){
+          this.$refs.seafor.focus()
+          this.isSearch=true
+        }else{
+          this.isSearch=false
+        }
+      })
     },
     methods: {
-        closeGoods(){
-            this.drawer=false
-        },
-        load () {
-        this.count += 2
-        },
-        showGoods(index){
-            this.ishow=index
-        },
-        notShowGoods(){
-            this.ishow=null
-        }
-    },
+      closeGoods(){
+          this.drawer=false
+      },
+      load () {
+      this.count += 2
+      },
+      showGoods(index){
+          this.ishow=index
+      },
+      notShowGoods(){
+          this.ishow=null
+      },
+      showSearch(){
+        var _this=this
+        setTimeout(() => {
+          _this.$refs.seafor.focus()
+        }, 0);
+      },
+      del(){
+        this.search=''
+      }
+  },
 }
 </script>
 
 <style scoped>
 a {
   color: black;
+}
+body,html{
+  -webkit-tap-highlight-color:transparent;
 }
 .herder_content {
   width: 100%;
@@ -278,7 +360,7 @@ a {
 }
 .herder_content ul li {
   float: left;
-  padding: 0 15px;
+  padding: 0 0.15rem;
   font-weight: 600;
   font-size: 14px;
   list-style-type: none;
@@ -380,5 +462,198 @@ img {
     padding: 0!important;
     line-height: 30px;
     font-size: 8px;
+    
+}
+.choose_goods_show li a{
+  color:rgb(121, 120, 120)
+}
+.choose_goods_show li a:hover{
+  color: pink;
+}
+.all_goods_show>ul:nth-last-child(1) ul li{
+  width: 100%;
+  text-align: center;
+}
+.all_goods_show>ul:nth-last-child(1) ul li a{
+  color: #000;
+  padding-left: 13px;
+}
+.all_goods_show>ul:nth-last-child(1) ul{
+  margin-left: -30px;
+}
+.all_goods_show>ul:nth-last-child(1) ul::before{
+  display: none;
+}
+.all_goods_show>ul:nth-last-child(1) ul ul::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid rgb(15, 15, 15);
+  margin-left: 28px;
+  margin-top: -29px;
+}
+.hetp_box{
+  position: absolute;
+  width: 200px;
+  border: 1px solid #000;
+  margin-left: -80px;
+  padding-bottom: 10px;
+  z-index: 1;
+  background-color: white;
+}
+.hetp_box ul li{
+  clear: both;
+  padding: 0;
+  font-size: 12px;
+  line-height: 30px;
+  margin-left: 73px;
+}
+.hetp_box ul li a{
+  color: rgb(121, 119, 116);
+}
+.hetp_box ul li a:hover{
+  color: pink;
+}
+.hetp_box ul li:nth-of-type(3){
+  margin-left: 84px;
+}
+.hetp_box::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid rgb(15, 15, 15);
+  margin-top: -8px;
+  margin-left: 85px;
+}
+.show_bags{
+  position: absolute;
+  width: 400px;
+  border: 1px solid black;
+  right: 90px;
+  text-align: center;
+  background-color: white;
+  z-index: 1;
+}
+.show_bags span{
+  font-size: 14px;
+  font-weight: 700;
+}
+.show_bags a{
+  padding: 17px 120px;
+  background-color: #000;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+}
+.show_bags::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid rgb(15, 15, 15);
+  margin-top: -8px;
+  margin-left: 350px;
+}
+.cny{
+  width: 400px;
+  border: 1px solid black;
+  border-right: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  z-index: 1;
+  padding-left: 20px;
+}
+.cny::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  right: 15px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid rgb(15, 15, 15);
+  top: -8px;
+  z-index: 2;
+}
+.cny_top ul li{
+  padding: 0;
+  padding-right: 100px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+}
+.search_btn{
+  width: 298px;
+  height: 38px;
+  border: none;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  position: absolute;
+  right: 200px;
+  overflow: hidden;
+  z-index: 1;
+}
+@media (max-width: 1079px) {
+  .search_btn{
+  position: absolute;
+  right:150px;
+  overflow: hidden;
+  z-index: 1;
+}
+}
+@media (max-width: 691px) {
+  .search_btn{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  border-bottom: 1px solid #000;
+}
+.search_btn input{
+  overflow: hidden;
+  width: 88%!important;
+}
+.search_btn img{
+  left: 90%!important;
+  margin-top: 6px;
+}
+}
+.search_btn input{
+  position: absolute;
+  top: 20px;
+  font-weight: 16px;
+  padding-left: 15px;
+  width: 88%;
+  height: 100%;
+  margin-top: -20px;
+  border: none;
+  outline: none;
+  overflow: hidden;
+}
+.search_btn img{
+  position: absolute;
+  width: 0.3rem;
+  left: 260px;
+  top: 0.02rem;
 }
 </style>
+<style>
+
+</style
