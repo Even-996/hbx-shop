@@ -655,6 +655,3 @@ img {
   top: 0.02rem;
 }
 </style>
-<style>
-
-</style
