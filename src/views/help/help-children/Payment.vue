@@ -25,12 +25,18 @@
 			Apple Pay: 2-5 工作日<br>
 			微信支付: 5 工作日</p>
 		</div> 
+		<hr>
+		<help-footer></help-footer>
 	</div>
 </template>
 
 <script>
+	import HelpFooter from '../help-footer/HelpFooter.vue'
 	export default{
-		name:'Payment'
+		name:'Payment',
+		components:{
+			HelpFooter
+		}
 	}
 </script>
 

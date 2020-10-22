@@ -36,12 +36,17 @@
 			<p>交易一经被确定，信用卡的发卡银行可能会向您收取海外交易手续费，金额将取决于银行制定的价格及条款。有关海外交易的手续费事宜，请向您的发卡银行查询。</p>
 			<hr>
 		</div>
+		<help-footer></help-footer>
 	</div>
 </template>
 
 <script>
+	import HelpFooter from '../help-footer/HelpFooter.vue'
 	export default{
-		name: 'Rule'
+		name: 'Rule',
+		components:{
+			HelpFooter
+		}
 	}
 </script>
 
