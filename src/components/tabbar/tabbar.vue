@@ -61,12 +61,15 @@
                 </ul>
               </div>
             </li>
-            <li @mouseleave="isbagShow=false" @mouseover="isbagShow=true">
+            <li @mouseleave="isbagShow=false" @mouseover="isbagShow=true" class="hidden-sm-and-down">
               <router-link to="/bags">您的购物袋(0)</router-link>
               <div class="show_bags" v-show="isbagShow">
                 <span>你的购物袋中暂时未有货品。</span><br>
                 <router-link to="#">新到货品</router-link>
               </div>
+            </li>
+            <li @mouseleave="isbagShow=false" @mouseover="isbagShow=true" class="hidden-md-and-up">
+              <router-link to="/bags">您的购物袋(0)</router-link>
             </li>
             <li class="hidden-xs-only img_cna" @mouseover="iscnyShow=true" @mouseleave="iscnyShow=false">
               <router-link to="/bags"
@@ -86,13 +89,17 @@
                 </div><br>
                 <div class="cny_bottom" >
                   <h4 style="font-weight:600">运送目的地 / 地区</h4>
-                  <ul>
-                    <li><router-link to="#"></router-link></li>
-                    <li><router-link to="#"></router-link></li>
-                    <li><router-link to="#"></router-link></li>
-                    <li><router-link to="#"></router-link></li>
-                    <li><router-link to="#"></router-link></li>
-                    <li><router-link to="#"></router-link></li>
+                  <ul ref="langues">
+                    <li><router-link to="#"><img src=""><span>STATES</span></router-link></li>
+                    <li><router-link to="#"><img src=""><span>AUSTRALIA</span></router-link></li>
+                    <li><router-link to="#"><img src=""><span>CANADA</span></router-link></li>
+                    <li><router-link to="#"><img src=""><span>CHINA</span></router-link></li>
+                    <li><router-link to="#"><img src=""><span>SOUTH KOREA</span></router-link></li>
+                    <li><router-link to="#"><img src=""><span>HONG KONG</span></router-link></li>
+                    <li><router-link to="#"><img src=""><span>JAPAN</span></router-link></li>
+                    <li><router-link to="#"><img src=""><span>SINGAPORE</span></router-link></li>
+                    <li><router-link to="#"><img src=""><span>TAIWAN</span></router-link></li>
+                    <li><router-link to="#"><img src=""><span>UNITED KINGDOM</span></router-link></li>
                   </ul>
                 </div>
               </div>
@@ -304,7 +311,6 @@ export default {
         }
     },
     created () {
-      document.body.addEventListener('touchstart', function(){ })
       document.addEventListener('click',e=>{
         const searchs=document.getElementsByClassName("searchs")[0]
         const app=document.getElementsByClassName("app")[0]
@@ -315,6 +321,17 @@ export default {
           this.isSearch=false
         }
       })
+    },
+    mounted() {
+      var a=this.$refs['langues']
+      for(let i=0;i<a.childNodes.length;i++){
+          a.childNodes[i].childNodes[0].childNodes[0].style.height=25+'px'
+        a.childNodes[i].childNodes[0].childNodes[0].src=require('../../assets/img/'+i+'.png')
+        if(i%2==1){
+          a.childNodes[i].childNodes[0].childNodes[0].style.position='relative'
+          a.childNodes[i].childNodes[0].childNodes[0].style.left=0
+        }
+      }
     },
     methods: {
       closeGoods(){
@@ -345,9 +362,6 @@ export default {
 <style scoped>
 a {
   color: black;
-}
-body,html{
-  -webkit-tap-highlight-color:transparent;
 }
 .herder_content {
   width: 100%;
@@ -606,6 +620,7 @@ img {
   right: 200px;
   overflow: hidden;
   z-index: 1;
+  background-color: white;
 }
 @media (max-width: 1079px) {
   .search_btn{
@@ -654,7 +669,18 @@ img {
   left: 260px;
   top: 0.02rem;
 }
+.cny_bottom li{
+  padding: 0!important;
+  padding-left: 30px!important;
+  display: flex;
+  justify-content: space-between;
+}
+.cny_bottom li span{
+  display: inline-block;
+  width: 110px;
+  font-size: 8px;
+  padding-left: 4px;
+  position: relative;
+  top: -3px;
+}
 </style>
-<style>
-
-</style
