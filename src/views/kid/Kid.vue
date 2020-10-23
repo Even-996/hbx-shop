@@ -8,12 +8,12 @@
 					</div>
 					<div class="banner-body col-md-3 col-xs-12">
 						<div class="banner-txt">
-							<h2>{{item.title}}</h2>
-							<h3>{{item.name}}</h3>
+							<h3>{{item.title}}</h3>
+							<h2>{{item.name}}</h2>
 							<p>{{item.describ}}</p>
 
-							<a>选购男装</a>
-							<a>选购女装</a>
+							<a>立即选购男童装</a>
+							<a>立即选购女童装</a>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@
 	}
 </script>
 
-<style>
+<style scoped="scoped">
 	.template{
 		margin: 15px;
 	}
@@ -57,7 +57,13 @@
 		font-weight: 700;
 	}
 	.banner-txt h2{
-		font-size: .35rem;
+		font-size: .3rem;
+		margin-top: 0;
+	}
+	.banner-txt h3{
+		font-size: .14rem;
+		font-weight: 400;
+		margin-bottom: .05rem;
 	}
 	.banner-txt p{
 		font-size: .16rem;
@@ -85,6 +91,9 @@
 		}
 	}
 	/* 组件2样式 */
+	.banner-txt2{
+		margin: 0.2rem 0;
+	}
 	.banner-txt2 h2,p,a{
 		font-weight: 700;
 	}

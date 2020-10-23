@@ -21,12 +21,18 @@
 				</div>
 			</div>
 		</div>
+		<hr>
+		<help-footer></help-footer>
 	</div>
 </template>
 
 <script>
+	import HelpFooter from '../help-footer/HelpFooter.vue'
 	export default {
 		name: 'Problem',
+		components:{
+			HelpFooter
+		},
 		data(){
 			return{
 				items: [

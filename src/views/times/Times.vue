@@ -6,7 +6,7 @@
 				<a class="spann" title="中古逸品">中古逸品</a>
 			</div>
 			<div class="headertwo">
-				<h1>新到货品</h1>
+				<h1>中古逸品</h1>
 			</div>
 			<div class="headerthree row container">
 				<div class="col-lg-4 col-lg-offset-4">
@@ -174,7 +174,7 @@
 		},
 		methods: {
 		      handleChange(val) {
-		        console.log(val);
+		        
 		      },
 				enter(index){
 					this.text4[index].isshow=false
@@ -187,8 +187,8 @@
 			loadData(){
 				getHomeMultData().then(res=>{
 					this.historyCloses = res.data.historycloses;
-					console.log(res);
-					console.log(this.historyCloses);
+					
+			
 				})
 			}
 			 },

@@ -37,7 +37,7 @@
 					    	<h3>{{item.title}}</h3>
 					    	<h2>{{item.name}}</h2>
 					    	<p>{{item.describ}}</p>
-					    	<a style="margin-left: 0;">选购男装</a>
+					    	<a style="margin-left: 0;">立即选购</a>
 					    </div>
 					</div>
 				</div>
@@ -109,7 +109,6 @@ import {getHomeMultData} from '../../network/home'
     	loadData(){
     		getHomeMultData().then(res =>{
     			this.homeCloses =  res.data.mancloses;
-    			console.log(this.homeCloses);
 			}).catch(error=>{
 
 			})
@@ -154,6 +153,9 @@ import {getHomeMultData} from '../../network/home'
 		}
 	}
 	/* 组件2样式 */
+	.banner-txt2{
+		margin: 0.2rem 0;
+	}
 	.banner-txt2 h2,p,a{
 		font-weight: 700;
 	}
