@@ -1,11 +1,12 @@
 <template>
-<div class="newest">
+  <div class="newest">
     <el-breadcrumb separator-class="el-icon-arrow-right" class="header">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>最新发售</el-breadcrumb-item>
     </el-breadcrumb>
     <h1 class="new_pay">最新发售</h1>
-    <el-row :gutter="20" class="content">
+    <br /><br />
+    <el-row :gutter="0" class="content">
       <el-col
         :md="6"
         :sm="12"
@@ -13,51 +14,67 @@
         class="content_goods"
         v-for="(item, index) in msg"
         :key="index"
-      >
-        <span
-          v-show="!item.ishover && !item.url2"
-          class="haveSellAll"
-          @mouseenter="imageChange(index)"
-          @mouseleave="imageLeaveChange(index)"
-		  :md="6"
-          :sm="12"
-          :xs="12"
-          >已售完</span
-        >
-        <img
-          v-show="item.ishover || !item.url2"
-          :src="item.url1"
-          @mouseenter="imageChange(index)"
-          @mouseleave="imageLeaveChange(index)"
-        />
-        <img
-          v-show="!item.ishover && item.url2"
-          :src="item.url2"
-          @mouseenter="imageChange(index)"
-          @mouseleave="imageLeaveChange(index)"
-        /><br />
-        <br />
-        <div class="title" 
-		@mouseenter="imageChange(index)"
+        @mouseenter="imageChange(index)"
         @mouseleave="imageLeaveChange(index)"
-		>
-			<span>{{ item.msg1 }}</span>
-			<router-link to="#">{{ item.msg2 }}</router-link>
-			<router-link to="#" v-if="item.msg3">{{ item.msg3 }}</router-link>
-			<span v-else class="nosell_all">售罄</span>
-			<router-link v-show="!item.ishover" to="#">{{ item.msg4 }}</router-link>
-		</div>
+      >
+        <div class="content_img">
+          <img
+            v-show="item.ishover"
+            :src="item.url1"
+            @mouseenter="imageChange(index)"
+            @mouseleave="imageLeaveChange(index)"
+          />
+          <img
+            v-show="!item.ishover"
+            :src="item.url2 ? item.url2 : require('../../assets/img/true.jpg')"
+            @mouseenter="imageChange(index)"
+            @mouseleave="imageLeaveChange(index)"
+          /><br />
+        </div>
+        <br />
+        <div
+          class="title"
+          @mouseenter="imageChange(index)"
+          @mouseleave="imageLeaveChange(index)"
+        >
+          <span>{{ item.msg1 }}</span>
+          <router-link to="#">{{ item.msg2 }}</router-link>
+          <router-link to="#" v-if="item.msg3">{{ item.msg3 }}</router-link>
+          <span v-else class="nosell_all">售罄</span>
+          <router-link v-show="!item.ishover" to="#">{{
+            item.msg4
+          }}</router-link>
+        </div>
       </el-col>
     </el-row>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <el-row>
+      <div class="block hidden-sm-and-down">
+        <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="page.pagenum"
+          :page-sizes="[1, 2, 5, 10]"
+          :page-size="page.pagesize"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="total"
+        >
+        </el-pagination>
+      </div>
+    </el-row>
   </div>
 </template>
 
 <script>
+import elementResizeDetectorMaker from "element-resize-detector";
 export default {
   name: "Newest",
   data() {
     return {
+      page: {
+        pagenum: 1,
+        pagesize: 5,
+      },
+      total: 30,
       msg: [
         {
           url1:
@@ -111,6 +128,12 @@ export default {
     imageLeaveChange(index) {
       this.msg[index].ishover = true;
     },
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
+    },
   },
 };
 </script>
@@ -128,10 +151,12 @@ export default {
 }
 .content img {
   width: 100%;
-  height: 100%;
 }
 .content_goods {
   text-align: center;
+  display: block;
+  padding-left: 10px;
+  padding-bottom: 50px;
 }
 .content_goods a {
   display: block;
@@ -147,12 +172,31 @@ export default {
   font-size: 16px;
   font-weight: 600;
 }
-.haveSellAll {
-  display: block;
-  position: absolute;
-  background-color: rgba(194, 194, 192, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.content_img {
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.title {
+  height: 130px;
+  margin-top: -20px;
+  padding-top: 20px;
+}
+.block {
+  padding-top: 30px;
+  width: 100%;
+  margin: 0.3rem auto;
+  text-align: center;
+}
+.el-select-dropdown .el-popper {
+  font-size: 0.19rem !important;
+}
+</style>
+<style>
+.el-pager li {
+  font-size: 0.18rem;
+}
+.el-pagination__total {
+  font-size: 0.19rem !important;
 }
 </style>
