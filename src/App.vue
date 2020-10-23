@@ -1,6 +1,8 @@
 <template>
   <div class="app">
+   <div class="tabbar">
     <tabbar />
+   </div>
     <router-view></router-view>
     <Footer />
   </div>
@@ -27,6 +29,15 @@ export default {
   margin: 0;
 }
 .app {
+  padding-top: 65px;
   /*font-size: 100px;*/
+}
+.tabbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: white;
 }
 </style>

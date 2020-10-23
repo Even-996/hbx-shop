@@ -3,8 +3,8 @@
     <div class="container-fluid">
       <div class="featured-brands">
         <div class="header">
-          <h2 class="heading">注目男装品牌</h2>
-          <a href="">全部男装品牌</a>
+          <h2 class="heading">注目品牌</h2>
+          <a href="">全部品牌</a>
         </div>
         <ul class="brand-groups col-xs-6 col-sm-6 col-md-3"  v-for="items in brandMan" :key="items.id">
           <li class="brand-group">
@@ -33,41 +33,87 @@ export default {
           all:['#FR2','1017 ALYX 9SM','11 By Boris Bidjan Saberi']
         },
         {
-          letter:'A',
-          all:['A.P.C','ACNE STUDIOS','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
+          letter:'F',
+          all:['F.C. Real Bristol','FEAR OF GOD' ]
+        },
+        {
+          all:['MARCELO BURLON','MASTERMIND JAPAN','MASTERMIND WORLD',' MEDICOM TOY','MISBHV','   MONCLER']
+        },
+        {
+          letter:'S',
+          all:['SACAI','SAINT LAURENT','STONE ISLAND',' STUSSY','SUICOKE']
         },
         {
           letter:'A',
           all:['A.P.C','ACNE STUDIOS','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
         },
         {
-          letter:'A',
-          all:['A.P.C','ACNE STUDIOS','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
+          letter:'H',
+          all:['HAVAIANAS','HAVE A GOOD TIME','HELMUT LANG','HERON PRESTON','HUMAN MADE']
         },
         {
-          letter:'A',
-          all:['A.P.C','ACNE STUDIOS','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
+          letter:'N',
+          all:[' NANAMICA','NEEDLES','ACRONYM','NEW BALANCE','NIKE']
         },
         {
-          letter:'A',
-          all:['A.P.C','ACNE STUDIOS','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
+          letter:'T',
+          all:['TAKAHIROMIYASHITA THESOLOIST','THOM BROWNE','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
         },
         {
-          letter:'A',
-          all:['A.P.C','ACNE STUDIOS','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
+          letter:'B',
+          all:['BILLIONAIRE BOYS CLUB','BOTTEGA VENETA','BRAIN DEAD','BURBERRY']
         },
         {
-          letter:'A',
-          all:['A.P.C','ACNE STUDIOS','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
+          letter:'J',
+          all:['JOHN ELLIOTT','JORDAN BRAND']
         },
         {
-          letter:'A',
-          all:['A.P.C','ACNE STUDIOS','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
+          letter:'O',
+          all:['OFF-WHITE']
+        },
+
+
+
+
+
+        {
+          letter:'K',
+          all:['KANGOL']
+        },
+
+        {
+          letter:' P',
+          all:['PALM ANGELS','PLACES + FACES','PLEASURES','PRADA']
         },
         {
-          letter:'A',
-          all:['A.P.C','ACNE STUDIOS','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
+          letter:'U',
+          all:[' UNDERCOVER','UNIFORM EXPERIMENT']
+        },
+        {
+          letter:'V' ,
+          all:['VALENTINO','VANS','VERDY X MINIONS','VERSACE']
+        },
+        {
+          letter:'C',
+          all:[' CANADA GOOSE','CARHARTT WORK IN PROGRESS','CHAMPION REVERSE WEAVE','COMMON PROJECTS','CONVERSE',' CP COMPANY']
         }
+        ,
+        {
+          letter:'L',
+          all:[' LOEWE']
+        },
+        {
+          letter: 'R',
+          all:['RAF SIMONS','REEBOK','RHUDE','RICK OWENS DRKSHDW','ROKIT']
+        },
+        {
+          letter: 'W',
+          all:['WACKO MARIA','WE11DONE','WHITE MOUNTAINEERING']
+        },
+        {
+          letter: 'M',
+          all:['MAHARISHI','MAISON KITSUNE','MAISON MARGIELA','MAISON MIHARA YASUHIRO']
+        },
       ]
     }
   }

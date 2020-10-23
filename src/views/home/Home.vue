@@ -1,3 +1,4 @@
+
 <template>
 	<div class="main-body">
 		<div class="template">
@@ -19,82 +20,100 @@
 		</div>
 	    <div class="template">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-xs-12">
-						<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhbx.hypebeast.com%2Ffiles%2F2020%2F09%2Fhyein-seo-hp-banner.jpg?q=90&w=800&fit=max&v=1">
-						<div class="banner-txt2">
-							<h3>最新发售</h3>
-							<h2>HYEIN SEO</h2>
-							<p>最新产品带有品牌标志性的战术服装和配饰。</p>
-							<a>选购男装</a>
-							<a>选购女装</a>
-						</div>
-					</div>
-					<div class="col-md-6 col-xs-12">
-						<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhbx.hypebeast.com%2Ffiles%2F2020%2F09%2Freese-cooper-homepage-banner.jpg?q=90&w=800&fit=max&v=1">
+				<div class="row" >
+<!--					<div class="col-md-6 col-xs-12">-->
+<!--						<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhbx.hypebeast.com%2Ffiles%2F2020%2F09%2Fhyein-seo-hp-banner.jpg?q=90&w=800&fit=max&v=1">-->
+<!--						<div class="banner-txt2">-->
+<!--							<h3>最新发售</h3>-->
+<!--							<h2>HYEIN SEO</h2>-->
+<!--							<p>最新产品带有品牌标志性的战术服装和配饰。</p>-->
+<!--							<a>选购男装</a>-->
+<!--							<a>选购女装</a>-->
+<!--						</div>-->
+<!--					</div>-->
+					<div class="col-md-6 col-xs-12"  v-for="(item,index) in homeCloses" :key="index">
+						<img :src="item.img" >
 					    <div class="banner-txt2">
-					    	<h3>产品精选</h3>
-					    	<h2>REESE COOPER</h2>
-					    	<p>全新品牌 Reese Cooper - 以 "If A Tree Falls" 为主题探索逃避现实和勘探。</p>
-					    	<a style="margin-left: 0;">选购男装</a>
+					    	<h3>{{item.title}}</h3>
+					    	<h2>{{item.name}}</h2>
+					    	<p>{{item.describ}}</p>
+					    	<a style="margin-left: 0;">立即选购</a>
 					    </div>
 					</div>
 				</div>
 			</div>
 		</div>
-	    <div class="template">
-	    	<div class="container">
-	    		<div class="row flex">
-					
-	    			<div class="banner-image col-md-9 col-xs-12 col-md-push-3">
-	    				<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhbx.hypebeast.com%2Ffiles%2F2020%2F10%2Fhypebae-reebok-campaign-oct8-1600x900-option1.jpg?q=90&w=1600&fit=max&v=1" />
-	    			</div>
-	    			<div class="banner-body col-md-3 col-xs-12 col-md-pull-9">
-	    				<div class="banner-txt2">
-	    					<h3>限量發售</h3>
-	    					<h2>HYPEBAE x Reebok DMX Thrill</h2>
-	    					<p>破格中性设计的联乘波鞋款式</p>
-	    					<a style="margin-left: 0;">立即选购</a>
-	    				</div>
-	    			</div>
-	    		</div>
-	    	</div>
-	    </div>
-	    <div class="template">
-	    	<div class="container">
-	    		<div class="row">
-	    			<div class="col-md-6 col-xs-12">
-	    				<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhbx.hypebeast.com%2Ffiles%2F2020%2F10%2Fwomens-fashion-clothing-coats-jackets-fw20-ader-error-ance-studios-fw20-12.jpg?q=90&w=800&fit=max&v=1">
-	    				<div class="banner-txt2">
-	    					<h3>配搭必備</h3>
-	    					<h2>秋冬精選</h2>
-	    					<p>包括最熱門款式</p>
-	    					<a style="margin-left: 0;">立刻选购</a>
-	    				</div>
-	    			</div>
-	    			<div class="col-md-6 col-xs-12">
-	    				<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhbx.hypebeast.com%2Ffiles%2F2020%2F10%2Fbag-womens-fashion-bottega-veneta-loewe-marine-serre-acne-studios-chloe-fw20-12.jpg?q=90&w=800&fit=max&v=1">
-	    			    <div class="banner-txt2">
-	    			    	<h3>新品上架</h3>
-	    			    	<h2>精选手袋</h2>
-	    			    	<p>最热门款式包括品牌 LOEWE, BURBERRY, Bottega Veneta, Alexander Wang。</p>
-	    			    	<a style="margin-left: 0;">立刻选购</a>
-	    			    </div>
-	    			</div>
-	    		</div>
-	    	</div>
-	    </div>
+<!--	    <div class="template">-->
+<!--	    	<div class="container">-->
+<!--	    		<div class="row flex">-->
+<!--					-->
+<!--	    			<div class="banner-image col-md-9 col-xs-12 col-md-push-3">-->
+<!--	    				<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhbx.hypebeast.com%2Ffiles%2F2020%2F10%2Fhypebae-reebok-campaign-oct8-1600x900-option1.jpg?q=90&w=1600&fit=max&v=1" />-->
+<!--	    			</div>-->
+<!--	    			<div class="banner-body col-md-3 col-xs-12 col-md-pull-9">-->
+<!--	    				<div class="banner-txt2">-->
+<!--	    					<h3>限量發售</h3>-->
+<!--	    					<h2>HYPEBAE x Reebok DMX Thrill</h2>-->
+<!--	    					<p>破格中性设计的联乘波鞋款式</p>-->
+<!--	    					<a style="margin-left: 0;">立即选购</a>-->
+<!--	    				</div>-->
+<!--	    			</div>-->
+<!--	    		</div>-->
+<!--	    	</div>-->
+<!--	    </div>-->
+<!--	    <div class="template">-->
+<!--	    	<div class="container">-->
+<!--	    		<div class="row">-->
+<!--&lt;!&ndash;	    			<div class="col-md-6 col-xs-12">&ndash;&gt;-->
+<!--&lt;!&ndash;	    				<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhbx.hypebeast.com%2Ffiles%2F2020%2F10%2Fwomens-fashion-clothing-coats-jackets-fw20-ader-error-ance-studios-fw20-12.jpg?q=90&w=800&fit=max&v=1">&ndash;&gt;-->
+<!--&lt;!&ndash;	    				<div class="banner-txt2">&ndash;&gt;-->
+<!--&lt;!&ndash;	    					<h3>配搭必備</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;	    					<h2>秋冬精選</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;	    					<p>包括最熱門款式</p>&ndash;&gt;-->
+<!--&lt;!&ndash;	    					<a style="margin-left: 0;">立刻选购</a>&ndash;&gt;-->
+<!--&lt;!&ndash;	    				</div>&ndash;&gt;-->
+<!--&lt;!&ndash;	    			</div>&ndash;&gt;-->
+<!--	    			<div class="col-md-6 col-xs-12">-->
+<!--	    				<img src="https://image-cdn.hypb.st/https%3A%2F%2Fhbx.hypebeast.com%2Ffiles%2F2020%2F10%2Fbag-womens-fashion-bottega-veneta-loewe-marine-serre-acne-studios-chloe-fw20-12.jpg?q=90&w=800&fit=max&v=1">-->
+<!--	    			    <div class="banner-txt2">-->
+<!--	    			    	<h3>新品上架</h3>-->
+<!--	    			    	<h2>精选手袋</h2>-->
+<!--	    			    	<p>最热门款式包括品牌 LOEWE, BURBERRY, Bottega Veneta, Alexander Wang。</p>-->
+<!--	    			    	<a style="margin-left: 0;">立刻选购</a>-->
+<!--	    			    </div>-->
+<!--	    			</div>-->
+<!--	    		</div>-->
+<!--	    	</div>-->
+<!--	    </div>-->
 	    <Brand />
 	</div>
 </template>
 
 <script>
 import Brand from '../brands/brand'
+import {getHomeMultData} from '../../network/home'
 	export default {
     name: "Home",
     components:{
       Brand
-    }
+    },
+    created() {
+    	this.loadData();
+	},
+	data(){
+    	return{
+           homeCloses:[]
+		}
+	},
+    methods:{
+    	loadData(){
+    		getHomeMultData().then(res =>{
+    			this.homeCloses =  res.data.mancloses;
+			}).catch(error=>{
+
+			})
+		}
+	}
 	}
 </script>
 
@@ -134,6 +153,9 @@ import Brand from '../brands/brand'
 		}
 	}
 	/* 组件2样式 */
+	.banner-txt2{
+		margin: 0.2rem 0;
+	}
 	.banner-txt2 h2,p,a{
 		font-weight: 700;
 	}
@@ -157,3 +179,4 @@ import Brand from '../brands/brand'
 		margin-left: .16rem;
 	}
 </style>
+
