@@ -18,6 +18,8 @@ const Payment = () => import('../views/help/help-children/Payment');
 const Return = () => import('../views/help/help-children/Return');
 const Rule = () => import('../views/help/help-children/Rule');
 const Tax = () => import('../views/help/help-children/Tax');
+const Register = () => import('../views/login/loginitem/Register');
+const ExLogin = () => import('../views/login/loginitem/ExLogin');
 
 
 
@@ -56,7 +58,22 @@ const routes = [
 	},
 	{
 	    path: '/login',
-	    component: Login
+	    component: Login,
+		 children: [
+            {
+                path: '',
+                redirect: 'exlogin'
+            },
+            {
+                path: 'register',
+                component: Register
+            },
+            {
+                path: 'exlogin',
+                component: ExLogin
+            },
+
+        ],
 	},
 	{
 	    path: '/help',
