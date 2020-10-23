@@ -109,16 +109,16 @@
 				</div>
 				<div class="drop_clothse">
 					<ul>
-						<li>男装<i class="el-icon-arrow-right drop_clothse_right"></i></li>
-						<li>女装<i class="el-icon-arrow-right drop_clothse_right"></i></li>
-						<li>套装<i class="el-icon-arrow-right drop_clothse_right"></i></li>
+						<router-link to="/man"><li :class="isactived==1?'isactive':''" @click="changeActive(1)">男装<i class="el-icon-arrow-right drop_clothse_right"></i></li></router-link>
+						<router-link to="/women"><li :class="isactived==2?'isactive':''" @click="changeActive(2)">女装<i class="el-icon-arrow-right drop_clothse_right"></i></li></router-link>
+						<router-link to="/kid"><li :class="isactived==3?'isactive':''" @click="changeActive(3)">童装<i class="el-icon-arrow-right drop_clothse_right"></i></li></router-link>
 					</ul>
 				</div>
 				<div class="drop_other_goods">
 					<ul>
-						<li>中古逸品</li>
-						<li>最新发售</li>
-						<li>折扣商品</li>
+						<router-link to="/times"><li :class="isactived==4?'isactive':''" @click="changeActive(4)">中古逸品</li></router-link>
+						<router-link to="/newest"><li :class="isactived==5?'isactive':''" @click="changeActive(5)">最新发售</li></router-link>
+						<router-link to="/discount"><li :class="isactived==6?'isactive':''" @click="changeActive(6)">折扣商品</li></router-link>
 						<li>HBX手机APP</li>
 						<li>登入</li>
 						<li>帮助</li>
@@ -150,6 +150,7 @@
 				search: '',
 				num: 0,
 				num1: 0,
+				isactived:null,
 				arr1: [{
 						path: '/man',
 						name: '男装',
@@ -346,6 +347,9 @@
 			},
 			del() {
 				this.search = ''
+			},
+			changeActive(index){
+				this.isactived=index
 			}
 		},
 	}
@@ -355,7 +359,9 @@
 	a {
 		color: black;
 	}
-
+	a:focus, a:hover {
+    text-decoration: none;
+    }
 	.herder_content {
 		width: 100%;
 		height: 65px;
@@ -419,7 +425,9 @@
 		padding: 15px 5px;
 		font-weight: 600;
 	}
-
+	.drop_clothse ul a li{
+		color: #000;
+	}
 	.drop_clothse_right {
 		float: right;
 	}
@@ -428,8 +436,17 @@
 		font-size: 15px;
 		padding: 15px 5px;
 		font-weight: 600;
+		
 	}
-
+	.drop_other_goods ul a li{
+		font-size: 14px!important;
+		font-weight: 600;
+		color: #000;
+		outline: none;
+	}
+	.drop_other_goods ul a {
+		text-decoration: none;
+	}
 	.drop_other_goods ul li:nth-last-child(1) {
 		font-size: 8px;
 	}
@@ -774,9 +791,18 @@
 	.s10{
 		background-position: -310px -342px;
 	}
+	.isactive{
+		color: red!important;
+	}
 </style>
 <style>
 	.el-drawer.ltr {
 		overflow: scroll;
 	}
+	.el-drawer:focus {
+    outline: none;
+   } 
+   .el-drawer.ltr :focus {
+    outline: none;
+   } 
 </style>
