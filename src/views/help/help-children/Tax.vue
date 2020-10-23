@@ -11,7 +11,7 @@
 
 <script>
 	export default{
-		name:'Tax'
+		name:'Tax',
 	}
 </script>
 

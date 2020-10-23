@@ -14,12 +14,17 @@
 		</div>
 		<p class="text-center text-muted">*请注意：优惠活动期间，退货/换货时间可能会较长。</p>
 		<hr>
+		<help-footer></help-footer>
 	</div>
 </template>
 
 <script>
+	import HelpFooter from '../help-footer/HelpFooter.vue'
 	export default {
 		name: 'Return',
+		components:{
+			HelpFooter
+		},
 		data(){
 			return{
 				items:[
