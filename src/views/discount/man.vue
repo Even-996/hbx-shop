@@ -234,15 +234,15 @@ export default {
   updated() {},
   watch: {
     screenWidth(val) {
-      // if (!this.timer) {
-      //   this.screenWidth = val;
-      //   this.timer = true;
-      //   let that = this;
-      //   setTimeout(function () {
-      //     // console.log(that.screenWidth);
-      //     that.timer = false;
-      //   }, 200);
-      // }
+      if (!this.timer) {
+        this.screenWidth = val;
+        this.timer = true;
+        let that = this;
+        // setTimeout(function () {
+        //   // console.log(that.screenWidth);
+        //   that.timer = false;
+        // }, 200);
+      }
       if (this.screenWidth < 768) {
         this.page = 2;
         this.initSwiper();
@@ -309,7 +309,7 @@ export default {
 .banner-row-title {
   margin-top: 20px;
   margin-bottom: 30px;
-  font-size: 32px;
+  font-size: .32rem;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -366,7 +366,7 @@ img {
 .product-body {
   flex-grow: 1;
   width: 100%;
-  font-size: 14px;
+  font-size: .14re,;
   text-align: center;
   text-transform: uppercase;
   margin: 0 0 5px;

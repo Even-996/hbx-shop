@@ -89,12 +89,13 @@ export default {
 .banner-body{
   text-align: center;
   text-transform: uppercase;
+  margin-top: 20px;
 }
 .banner-cta{
   margin-left: 7.5px !important;
   margin-right: 7.5px !important;
   display: inline-block;
-  font-size: 16px;
+  font-size: .16rem;
   font-weight: 700;
   text-decoration: underline;
 }
