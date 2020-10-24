@@ -1,30 +1,30 @@
 <template>
   <div class="container-fluid">
     <div class="banner-row-title">选购女装</div>
-    <div class="row" ref="row" :style="'height:' + allHeigh + 'px'">
+    <div class="row" ref="row" :style="'height:' + allHeight + 'px'">
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
+          <div class="swiper-slide" v-for="(item,index) in saleCloses2" :key="index">
             <div class="body carousel-caption">
               <div class="carousel-cell is-selected">
                 <div class="product-box catalog product">
                   <div class="product-thumbnail">
                     <a href="">
                       <img
-                        src="https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F4a%2F74%2Fshirt_1_1-aa69c5a216d447105ec067be46e2.jpg?q=60&w=460&fit=max&v=1"
-                        alt=""
+                              :src="item.img1"
+                              alt=""
                       />
                       <img src="" alt="" />
                     </a>
                     <div class="product-body">
-                      <a href="" class="brand">Sasquatchfabrix.</a>
+                      <a href="" class="brand">{{item.title}}</a>
                       <a href="" class="name"
-                        >Oriental Tie Dye Open Collar Long Sleeve Shirt</a
+                      >{{item.text}}</a
                       >
                       <div class="info">
-                        <span class="sale-price">CNY 1,554</span>
-                        <span class="regular-price on-sale">CNY 3,885</span>
-                        <span class="hidden-xs">60% Off</span>
+                        <span class="sale-price">CNY {{item.price1}}</span>
+                        <span class="regular-price on-sale">CNY {{item.price2}}</span>
+                        <span class="hidden-xs">{{item.describ}}</span>
                       </div>
                     </div>
                   </div>
@@ -35,44 +35,44 @@
               <div></div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="body carousel-caption">
-              <div class="carousel-cell is-selected">
-                <div class="product-box catalog product">
-                  <div class="product-thumbnail">
-                    <a href="">
-                      <img
-                        ref="img"
-                        src="https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F4a%2F74%2Fshirt_1_1-aa69c5a216d447105ec067be46e2.jpg?q=60&w=460&fit=max&v=1"
-                        alt=""
-                      />
-                      <img src="" alt="" />
-                    </a>
-                    <div class="product-body" ref="font">
-                      <a href="" class="brand">Sasquatchfabrix.</a>
-                      <a href="" class="name"
-                        >Oriental Tie Dye Open Collar Long Sleeve Shirt</a
-                      >
-                      <div class="info">
-                        <span class="sale-price">CNY 1,554</span>
-                        <span class="regular-price on-sale">CNY 3,885</span>
-                        <span class="hidden-xs">60% Off</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-          <div class="swiper-slide">Slide 3</div>
-          <div class="swiper-slide">Slide 4</div>
-          <div class="swiper-slide">Slide 5</div>
-          <div class="swiper-slide">Slide 6</div>
-          <div class="swiper-slide">Slide 7</div>
-          <div class="swiper-slide">Slide 8</div>
+          <!--          <div class="swiper-slide">-->
+          <!--            <div class="body carousel-caption">-->
+          <!--              <div class="carousel-cell is-selected">-->
+          <!--                <div class="product-box catalog product">-->
+          <!--                  <div class="product-thumbnail">-->
+          <!--                    <a href="">-->
+          <!--                      <img-->
+          <!--                        ref="img"-->
+          <!--                        src="https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F4a%2F74%2Fshirt_1_1-aa69c5a216d447105ec067be46e2.jpg?q=60&w=460&fit=max&v=1"-->
+          <!--                        alt=""-->
+          <!--                      />-->
+          <!--                      <img src="" alt="" />-->
+          <!--                    </a>-->
+          <!--                    <div class="product-body" ref="font">-->
+          <!--                      <a href="" class="brand">Sasquatchfabrix.</a>-->
+          <!--                      <a href="" class="name"-->
+          <!--                        >Oriental Tie Dye Open Collar Long Sleeve Shirt</a-->
+          <!--                      >-->
+          <!--                      <div class="info">-->
+          <!--                        <span class="sale-price">CNY 1,554</span>-->
+          <!--                        <span class="regular-price on-sale">CNY 3,885</span>-->
+          <!--                        <span class="hidden-xs">60% Off</span>-->
+          <!--                      </div>-->
+          <!--                    </div>-->
+          <!--                  </div>-->
+          <!--                </div>-->
+          <!--              </div>-->
+          <!--              <div></div>-->
+          <!--              <div></div>-->
+          <!--              <div></div>-->
+          <!--            </div>-->
+          <!--          </div>-->
+          <!--          <div class="swiper-slide">Slide 3</div>-->
+          <!--          <div class="swiper-slide">Slide 4</div>-->
+          <!--          <div class="swiper-slide">Slide 5</div>-->
+          <!--          <div class="swiper-slide">Slide 6</div>-->
+          <!--          <div class="swiper-slide">Slide 7</div>-->
+          <!--          <div class="swiper-slide">Slide 8</div>-->
         </div>
         <!-- Add Pagination -->
         <!-- <div class="swiper-pagination"></div> -->
@@ -87,6 +87,8 @@
 
 <script>
 import Swiper from "swiper";
+import {getHomeMultData} from "../../network/home";
+
 export default {
   data() {
     return {
@@ -96,6 +98,7 @@ export default {
       imgHeigh: 0,
       fontHeigh: 0,
       allHeigh: 600,
+      saleCloses:[]
     };
   },
   computed: {},
@@ -116,8 +119,14 @@ export default {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+
       });
     },
+    loadData(){
+      getHomeMultData().then(res=>{
+        this.saleCloses2 = res.data.salecloses2;
+      })
+    }
   },
   created() {
     if (this.screenWidth < 768) {
@@ -127,6 +136,7 @@ export default {
       this.page = 4;
       this.initSwiper();
     }
+    this.loadData();
   },
   mounted() {
     this.initSwiper();
@@ -147,7 +157,7 @@ export default {
       this.fontHeigh = this.$refs.font.offsetHeight;
       this.allHeigh = this.imgHeight + this.fontHeight + 40;
     })
-    
+
   },
   updated() {},
   watch: {

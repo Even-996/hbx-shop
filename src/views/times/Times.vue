@@ -112,9 +112,9 @@
 						<div class="row rowfloat">
 							<div class="col-sm-6 col-md-4 col-xs-12 col-lg-4 " v-for="(item,index) in historyCloses" :key="index">
 								<div class="thumbnail" id="imgtext" v-cloak>
-									<img :src="item.img"   v-if="isshow" >
-<!--									@mouseenter="enter(index)"-->
-<!--									<img :src="item.src2" @mouseleave="leave(index)" v-else />-->
+									<img :src="item.img1"   v-if="item.isshow" @mouseenter="enter(item)">
+
+									<img :src="item.img2"  @mouseleave="leave(item)" v-else />
 									<div class="caption">
 										<p><a class="cur"> {{item.title}}</a></p>
 										<p><a class="cur"> {{item.text}}</a></p>
@@ -163,7 +163,6 @@
 			// 	// {src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fb4%2F53%2Fjacket_1_1-75e637cda5cb0a32d0ec1219e8fc.jpg?q=60&w=460&fit=max&v=1",src2:"",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
 			// 	// {src:"https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fb6%2F35%2Fhoodie_1_1-b99345a16efda5a9145cc8845bd7.jpg?q=60&w=460&fit=max&v=1",src2:"",p1:'SUPREME',p2:'SUPREME X STONE ISLAND JACKET',p3:'CNY 9,279',p4:'美中古货品',isshow:true},
 			// 	],
-			isshow:true,
 			current:9999,
 			region:'',
 			historyCloses:[]
@@ -176,19 +175,17 @@
 		      handleChange(val) {
 		        
 		      },
-				enter(index){
-					this.text4[index].isshow=false
-					
+				enter(item){
+                  item.isshow = 0;
+					console.log(item)
+
 		      },
-			 leave(index){
-				 this.text4[index].isshow=true
-				 
+			 leave(item){
+                  item.isshow = 1;
 				},
 			loadData(){
 				getHomeMultData().then(res=>{
 					this.historyCloses = res.data.historycloses;
-					
-			
 				})
 			}
 			 },
