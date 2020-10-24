@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import axios from 'axios'
+import axios from 'axios'
 import router from './router'
 import "bootstrap";
 // import './assets/css/bootstrap.css'
@@ -17,7 +17,7 @@ import './assets/icon/iconfont.css';
 
 Vue.use(ElementUI)
 new Vue({
-  // axios,
+  axios,
   router,
   // store,
   render: h => h(App),
