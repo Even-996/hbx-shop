@@ -162,7 +162,7 @@
 }
 .title{
   width: 100%;
-  height: 120px;
+  height: 160px;
   margin-top: -20px;
   padding-top: 20px;
 }
