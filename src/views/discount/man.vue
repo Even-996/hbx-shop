@@ -9,13 +9,14 @@
               <div class="carousel-cell is-selected">
                 <div class="product-box catalog product">
                   <div class="product-thumbnail">
-                    <a href="" >
-                      <img  :src="item.img1" @mouseenter="enter(item)" v-if="item.isshow || item.num == 0"
+                    <a href=""  ref="imgH">
+
+                      <img :src="item.img1" @mouseenter="enter(item)" v-if="item.isshow || item.num == 0"
                         alt=""
                       />
                       <img  v-if="!item.isshow && item.num"  :src="item.img2" @mouseleave="leave(item)" alt="" />
                     </a>
-                    <div class="product-body">
+                    <div class="product-body" ref="font">
                       <a href="" class="brand">{{item.title}}</a>
                       <a href="" class="name"
                         >{{item.name}}</a
@@ -93,14 +94,14 @@
               <div class="carousel-cell is-selected">
                 <div class="product-box catalog product">
                   <div class="product-thumbnail">
-                    <a href="">
+                    <a href="" ref="imgH">
                       <img @mouseenter="enter(item)" v-if="item.isshow || item.num == 0"
                               :src="item.img1"
                         alt=""
                       />
                       <img v-if="!item.isshow && item.num"  :src="item.img2" @mouseleave="leave(item)" alt="" />
                     </a>
-                    <div class="product-body">
+                    <div class="product-body" ref="font">
                       <a href="" class="brand">{{item.title}}</a>
                       <a href="" class="name"
                         >{{item.text}}</a
@@ -184,7 +185,7 @@ export default {
       mySwiper: "",
       imgHeight: 0,
       fontHeight: 0,
-      allHeight: 600,
+      allHeight: 800,
       saleCloses1:[],
       saleCloses2:[]
     };
@@ -228,16 +229,15 @@ export default {
   created() {
     if (this.screenWidth < 768) {
       this.page = 2;
-      this.initSwiper();
     } else {
       this.page = 4;
-      this.initSwiper();
     }
-
+    this.initSwiper();
     this.loadData();
+
+
   },
   mounted() {
-    this.initSwiper();
     const that = this;
     window.onresize = () => {
       return (() => {
@@ -246,12 +246,12 @@ export default {
       })();
     };
     window.addEventListener("resize", () => {
-      this.imgHeight = this.$refs.img.height;
+      this.imgHeight = this.$refs.imgH.height;
       this.fontHeight = this.$refs.font.offsetHeight;
       this.allHeight = this.imgHeight + this.fontHeight + 40;
     });
     window.addEventListener('load',() => {
-      this.imgHeight = this.$refs.img.height;
+      this.imgHeight = this.$refs.imgH.height;
       this.fontHeight = this.$refs.font.offsetHeight;
       this.allHeight = this.imgHeight + this.fontHeight + 40;
     })
