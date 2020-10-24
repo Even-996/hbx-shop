@@ -14,16 +14,6 @@
         v-for="(item, index) in newcloses"
         :key="index"
       >
-        <span
-          v-show="!item.isshow && !item.img2"
-          class="haveSellAll"
-          @mouseenter="imageChange(index)"
-          @mouseleave="imageLeaveChange(item)"
-		  :md="6"
-          :sm="12"
-          :xs="12"
-          >已售完</span
-        >
         <img
           v-show="item.isshow || !item.img2"
           :src="item.img1"
@@ -38,16 +28,15 @@
         /><br />
         <br />
         <div class="title"
-		@mouseenter="imageChange(item)"
+		    @mouseenter="imageChange(item)"
         @mouseleave="imageLeaveChange(item)"
-		>
+		    >
 			<span>{{ item.time }}</span>
 			<router-link to="#">{{ item.name }}</router-link>
 			<span  class="nosell_all" v-if="!item.num">{{ item.state }}</span>
 <!--            v-show="!item.isshow"-->
 			<router-link v-if="item.num" to="#">{{item.state}}</router-link>
-            <router-link to="#"   v-if="!item.isshow && item.num">快速查看</router-link>
-
+            <router-link to="#"   v-if="!item.isshow && item.num" class="lookQuit">快速查看</router-link>
         </div>
       </el-col>
     </el-row>
@@ -170,5 +159,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.title{
+  width: 100%;
+  height: 120px;
+  margin-top: -20px;
+  padding-top: 20px;
+}
+.lookQuit{
+  color: rgb(163, 111, 120)!important;
 }
 </style>
