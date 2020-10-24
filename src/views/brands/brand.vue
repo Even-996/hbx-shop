@@ -6,16 +6,18 @@
           <h2 class="heading">注目品牌</h2>
           <a href="">全部品牌</a>
         </div>
-        <ul class="brand-groups col-xs-6 col-sm-6 col-md-3"  v-for="items in brandMan" :key="items.id">
-          <li class="brand-group">
+		  <div ><!-- class="col-xs-6 col-sm-6 col-lg-12 col-md-6 " -->
+        <ul class="brand-groups count" >
+          <li class="brand-group "  v-for="items in brandMan" >
             <span class="brand-group-title">{{items.letter}}</span>
-            <ul class="brand-group-items" v-for="item in items.all" :key="item.id">
-              <li class="brand-group-item">
-                <a href="" title="#FR2">{{item}}</a>
+            <ul class="brand-group-items" >
+              <li class="brand-group-item" v-for="tt in items.all" >
+                <a href="" title="#FR2">{{tt}}</a>
               </li>
             </ul>
           </li>
         </ul>
+		  </div>
       </div>
       <div class="featured-brands"></div>
       <div class="featured-brands"></div>
@@ -32,88 +34,87 @@ export default {
           letter:'#',
           all:['#FR2','1017 ALYX 9SM','11 By Boris Bidjan Saberi']
         },
+		  {
+		    letter:'A',
+		    all:['A.P.C','ACNE STUDIOS','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
+		  },
+		  {
+		    letter:'B',
+		    all:['BILLIONAIRE BOYS CLUB','BOTTEGA VENETA','BRAIN DEAD','BURBERRY']
+		  },
+		  {
+		    letter:'C',
+		    all:[' CANADA GOOSE','CARHARTT WORK IN PROGRESS','CHAMPION REVERSE WEAVE','COMMON PROJECTS','CONVERSE',' CP COMPANY']
+		  },
         {
           letter:'F',
           all:['F.C. Real Bristol','FEAR OF GOD' ]
         },
+		  {
+			letter:'G',
+			all:['G-SHOCK']  
+		  },
+		  {
+		    letter:'H',
+		    all:['HAVAIANAS','HAVE A GOOD TIME','HELMUT LANG','HERON PRESTON','HUMAN MADE']
+		  },
+		  {
+		    letter:'J',
+		    all:['JOHN ELLIOTT','JORDAN BRAND']
+		  },
+		  {
+		    letter:'K',
+		    all:['KANGOL']
+		  },
+		  {
+		    letter:'L',
+		    all:[' LOEWE']
+		  },
+		  {
+		    letter: 'M',
+		    all:['MAHARISHI','MAISON KITSUNE','MAISON MARGIELA','MAISON MIHARA YASUHIRO','MARCELO BURLON','MASTERMIND JAPAN','MASTERMIND WORLD','MEDICOM TOY','MISBHV','MONCLER','MONCLER GENIUS']
+		  },
+		  {
+		    letter:'N',
+		    all:[' NANAMICA','NEEDLES','ACRONYM','NEW BALANCE','NIKE']
+		  },
+		  {
+		    letter:'O',
+		    all:['OFF-WHITE']
+		  },
+		  {
+		    letter:' P',
+		    all:['PALM ANGELS','PLACES + FACES','PLEASURES','PRADA']
+		  },
+		  {
+		    letter: 'R',
+		    all:['RAF SIMONS','REEBOK','RHUDE','RICK OWENS DRKSHDW','ROKIT']
+		  },
+		  {
+		    letter:'S',
+		    all:['SACAI','SAINT LAURENT','STONE ISLAND',' STUSSY','SUICOKE']
+		  },
+		  {
+		    letter:'T',
+		    all:['TAKAHIROMIYASHITA THESOLOIST','THOM BROWNE','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
+		  },
+		  {
+		    letter:'U',
+		    all:[' UNDERCOVER','UNIFORM EXPERIMENT']
+		  },
+		  {
+		    letter:'V' ,
+		    all:['VALENTINO','VANS','VERDY X MINIONS','VERSACE']
+		  },
+		  {
+		    letter: 'W',
+		    all:['WACKO MARIA','WE11DONE','WHITE MOUNTAINEERING']
+		  },
         {
-          all:['MARCELO BURLON','MASTERMIND JAPAN','MASTERMIND WORLD',' MEDICOM TOY','MISBHV','   MONCLER']
-        },
-        {
-          letter:'S',
-          all:['SACAI','SAINT LAURENT','STONE ISLAND',' STUSSY','SUICOKE']
-        },
-        {
-          letter:'A',
-          all:['A.P.C','ACNE STUDIOS','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
-        },
-        {
-          letter:'H',
-          all:['HAVAIANAS','HAVE A GOOD TIME','HELMUT LANG','HERON PRESTON','HUMAN MADE']
-        },
-        {
-          letter:'N',
-          all:[' NANAMICA','NEEDLES','ACRONYM','NEW BALANCE','NIKE']
-        },
-        {
-          letter:'T',
-          all:['TAKAHIROMIYASHITA THESOLOIST','THOM BROWNE','ACRONYM','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','AMBUSH','ASICS','AWAKE']
-        },
-        {
-          letter:'B',
-          all:['BILLIONAIRE BOYS CLUB','BOTTEGA VENETA','BRAIN DEAD','BURBERRY']
-        },
-        {
-          letter:'J',
-          all:['JOHN ELLIOTT','JORDAN BRAND']
-        },
-        {
-          letter:'O',
-          all:['OFF-WHITE']
-        },
-
-
-
-
-
-        {
-          letter:'K',
-          all:['KANGOL']
-        },
-
-        {
-          letter:' P',
-          all:['PALM ANGELS','PLACES + FACES','PLEASURES','PRADA']
-        },
-        {
-          letter:'U',
-          all:[' UNDERCOVER','UNIFORM EXPERIMENT']
-        },
-        {
-          letter:'V' ,
-          all:['VALENTINO','VANS','VERDY X MINIONS','VERSACE']
-        },
-        {
-          letter:'C',
-          all:[' CANADA GOOSE','CARHARTT WORK IN PROGRESS','CHAMPION REVERSE WEAVE','COMMON PROJECTS','CONVERSE',' CP COMPANY']
+			 letter: 'Y',
+          all:['Y-3']
         }
-        ,
-        {
-          letter:'L',
-          all:[' LOEWE']
-        },
-        {
-          letter: 'R',
-          all:['RAF SIMONS','REEBOK','RHUDE','RICK OWENS DRKSHDW','ROKIT']
-        },
-        {
-          letter: 'W',
-          all:['WACKO MARIA','WE11DONE','WHITE MOUNTAINEERING']
-        },
-        {
-          letter: 'M',
-          all:['MAHARISHI','MAISON KITSUNE','MAISON MARGIELA','MAISON MIHARA YASUHIRO']
-        },
+        
       ]
     }
   }
@@ -122,6 +123,7 @@ export default {
 
 <style scoped>
   *{
+	
     box-sizing: border-box;
   }
   .homepage-featured-brands-container{
@@ -137,6 +139,18 @@ export default {
       margin-right: auto;
       margin-left: auto;
     }
+	 .count{
+		column-count: 4;
+		column-gap: 30px;
+		break-inside: avoid; 
+	 }
+  }
+  @media (max-width:768px) {
+  	.count{
+  			column-count: 2;
+  			column-gap: 30px;
+  			break-inside: avoid; 
+  	}
   }
   .homepage-featured-brands-container .featured-brands{
     font-size: .12rem;
@@ -146,23 +160,41 @@ export default {
   .header {
     display: flex;
     align-items: flex-end;
-    margin: 0 0 20px;
+	 margin-bottom: 20px;
+	/* height: 30px;
+	 line-height: 30px; */
+  }
+  .header h2{
+	  margin: 0;
+	  font-size: 18px;
+  }
+  .header a{
+	 margin-left: .15rem;
+	 text-decoration:underline; 
+	 font-weight: 500;
+  }
+  .header a:hover{
+	  text-decoration: none;
+	  color: #ccc;
   }
   a{
     color: #000;
-    margin-left: .15rem;
     font-weight: 700;
-    /* text-decoration: underline; */
     background-color: transparent;
   }
   h2{
     font-size: .18rem;
     font-weight: 700;
   }
+  ul{
+	      padding-inline-start: 0px;
+			margin-block-start: 0em;
+  }
   .brand-groups{
     padding-left: 0;
     list-style: none;
     margin-bottom: .15rem;
+	 
     /* -moz-column-count: 4;
     column-count: 4;
     -moz-column-gap: 30px;
@@ -170,9 +202,18 @@ export default {
     -moz-column-break-inside: avoid;
     break-inside: avoid; */
   }
+  .brand-group{
+	 margin-bottom: 0.15rem;
+  }
+  .brand-group a{
+	  text-decoration: none;
+  }
   .brand-group-items{
     padding-left: 0;
-    /* line-height: 1.2rem; */
     list-style: none;
+  }
+  .brand-group-item a:hover{
+	  text-decoration: none;
+	  color: #999999;
   }
 </style>

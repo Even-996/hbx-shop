@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb67d96-218d-47ab-8e78-741263a11554" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/assets/img/l.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/assets/img/r.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/assets/img/true.jpg" afterDir="false" />
@@ -17,17 +36,18 @@
       <change beforePath="$PROJECT_DIR$/src/views/discount/Discount.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/discount/Discount.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/newest/Newest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/newest/Newest.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/times/Times.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/times/Times.vue" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login/Login.vue" afterDir="false" />
+>>>>>>> 95cfa43693a6dda4097ecba42969dbd78cfbc0f5
     </list>
-    <ignored path="$PROJECT_DIR$/node_modules/" />
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -81,6 +101,8 @@
       </file>
     </leaf>
   </component>
+=======
+>>>>>>> 95cfa43693a6dda4097ecba42969dbd78cfbc0f5
   <component name="FindInProjectRecents">
     <findStrings>
       <find>media</find>
@@ -113,6 +135,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -133,6 +156,8 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> 95cfa43693a6dda4097ecba42969dbd78cfbc0f5
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
@@ -143,6 +168,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
@@ -198,33 +224,29 @@
         </subPane>
       </pane>
     </panes>
+=======
+  <component name="ProjectId" id="1jHCcDYwOwclaMSHr60ttBk9Fdu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+>>>>>>> 95cfa43693a6dda4097ecba42969dbd78cfbc0f5
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/network" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\vscode\workspace\hbx-shop\node_modules\prettier" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\vscode\workspace\hbx-shop\src\network" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -236,6 +258,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603329458111</updated>
       <workItem from="1603329459564" duration="21300000" />
+<<<<<<< HEAD
       <workItem from="1603413772146" duration="9045000" />
       <workItem from="1603438499427" duration="5346000" />
       <workItem from="1603499269335" duration="417000" />
@@ -268,8 +291,25 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+=======
+      <workItem from="1603451709099" duration="133000" />
+    </task>
+    <servers />
+  </component>
+>>>>>>> 95cfa43693a6dda4097ecba42969dbd78cfbc0f5
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -282,6 +322,7 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/network/home.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -435,4 +476,6 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> 95cfa43693a6dda4097ecba42969dbd78cfbc0f5
 </project>

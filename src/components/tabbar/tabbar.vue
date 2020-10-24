@@ -91,35 +91,9 @@
 								<div class="cny_bottom">
 									<h4 style="font-weight:600">运送目的地 / 地区</h4>
 									<ul ref="langues">
-										<li>
-											<router-link to="#"><img src=""><span>STATES</span></router-link>
-										</li>
-										<li>
-											<router-link to="#"><img src=""><span>AUSTRALIA</span></router-link>
-										</li>
-										<li>
-											<router-link to="#"><img src=""><span>CANADA</span></router-link>
-										</li>
-										<li>
-											<router-link to="#"><img src=""><span>CHINA</span></router-link>
-										</li>
-										<li>
-											<router-link to="#"><img src=""><span>SOUTH KOREA</span></router-link>
-										</li>
-										<li>
-											<router-link to="#"><img src=""><span>HONG KONG</span></router-link>
-										</li>
-										<li>
-											<router-link to="#"><img src=""><span>JAPAN</span></router-link>
-										</li>
-										<li>
-											<router-link to="#"><img src=""><span>SINGAPORE</span></router-link>
-										</li>
-										<li>
-											<router-link to="#"><img src=""><span>TAIWAN</span></router-link>
-										</li>
-										<li>
-											<router-link to="#"><img src=""><span>UNITED KINGDOM</span></router-link>
+										<li v-for="item in language" class="lii">
+											<span class="imgs" :class="item.class"></span>
+											<span class="spantext"> {{item.text}}</span>
 										</li>
 									</ul>
 								</div>
@@ -314,6 +288,18 @@
 						title: '',
 						goods: ['日志', '中古逸品']
 					}, ]
+				],
+				language:[
+					{class:'s1',text:'UNITED STATES'},
+					{class:'s2',text:'AUSTRALIA'},
+					{class:'s3',text:'CANADA'},
+					{class:'s4',text:'CHINA'},
+					{class:'s5',text:'SOUYTH KOREA'},
+					{class:'s6',text:'HONG KONG'},
+					{class:'s7',text:'JAPAN'},
+					{class:'s8',text:'SINGAPORE'},
+					{class:'s9',text:' TAIWAN'},
+					{class:'s10',text:' UNITED KINGDOM'},
 				]
 			}
 		},
@@ -748,20 +734,62 @@
 		top: 0.02rem;
 	}
 
-	.cny_bottom li {
-		padding: 0 !important;
-		padding-left: 30px !important;
-		display: flex;
-		justify-content: space-between;
-	}
 
-	.cny_bottom li span {
-		display: inline-block;
-		width: 110px;
-		font-size: 8px;
-		padding-left: 4px;
+    .lii{
+		width: 50%;
 		position: relative;
-		top: -3px;
+		white-space: nowrap;
+		height: 0.3rem;
+		line-height: 0.3rem;
+		margin-bottom: 8px;
+	 }
+	.cny_bottom .lii .imgs {
+		position: absolute;
+		width: 0.28rem;
+		height: 0.17rem;
+		border: 0.01rem solid gainsboro;
+		top: 25%;
+		background-image:url(../../assets/img/sprite.png);
+		background-repeat: no-repeat;
+	}
+	.spantext{
+		position: absolute;
+		left: 28%;
+		font-weight: 100;
+		font-size: 11px;
+	}
+	.spantext:hover{
+		color: #0077AA;
+	}
+	.s1{
+		background-position: -198px -342px;
+	}
+	.s2{
+		background-position: -56px -364px;
+	}
+	.s3{
+		background-position: -28px -364px;
+	}
+	.s4{
+		background-position: 0 -364px;
+	}
+	.s5{
+		background-position: -254px -342px;
+	}
+	.s6{
+		background-position: -306px -244px;
+	}
+	.s7{
+		background-position: -282px -342px;
+	}
+	.s8{
+		background-position: -84px -364px;
+	}
+	.s9{
+		background-position: -226px -342px;
+	}
+	.s10{
+		background-position: -310px -342px;
 	}
 	.isactive{
 		color: red!important;
