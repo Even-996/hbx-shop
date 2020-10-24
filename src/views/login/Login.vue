@@ -31,5 +31,112 @@ export default {
 </script>
 
 <style scoped>
-@import url('../../assets/css/login.css');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Nimbus San D, Arial, sans-serif, Microsoft Yahei;
+    /*font-size: 1rem;*/
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .container, .container-sm {
+        width: 100%;
+        margin: 20px auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .container, .container-md, .container-sm {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1140px;
+    }
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#login-register-container {
+    width: 570px;
+    margin: 90px auto 50px;
+    border: 1px solid #000;
+    font-size: 14px;
+}
+
+#login-register-container .tab-header {
+    display: flex;
+}
+
+.tab-header .tab-header-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 80px;
+}
+
+.tab-header-item .tab-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.tab-item {
+    background-color: #000;
+    color: #fff;
+}
+
+.heading-primary {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+a {
+    color: #000;
+    background-color: transparent;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+    color: #000000;
+}
+
+.router-link-active {
+    background-color: #fff;
+    color: #000;
+    pointer-events: none;
+}
+
 </style>
