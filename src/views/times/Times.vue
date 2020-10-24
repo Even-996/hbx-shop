@@ -177,6 +177,7 @@
 		      },
 				enter(item){
                   item.isshow = 0;
+					console.log(item)
 
 		      },
 			 leave(item){

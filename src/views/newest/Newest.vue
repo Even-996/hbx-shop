@@ -37,7 +37,7 @@
           @mouseleave="imageLeaveChange(item)"
         /><br />
         <br />
-        <div class="title" 
+        <div class="title"
 		@mouseenter="imageChange(item)"
         @mouseleave="imageLeaveChange(item)"
 		>
@@ -46,7 +46,7 @@
 			<span  class="nosell_all" v-if="!item.num">{{ item.state }}</span>
 <!--            v-show="!item.isshow"-->
 			<router-link v-if="item.num" to="#">{{item.state}}</router-link>
-            <router-link to="#" style="position: absolute"  v-if="!item.isshow && item.num">快速查看</router-link>
+            <router-link to="#"   v-if="!item.isshow && item.num">快速查看</router-link>
 
         </div>
       </el-col>
