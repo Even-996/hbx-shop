@@ -6,7 +6,7 @@
           <h2 class="heading">注目品牌</h2>
           <a href="">全部品牌</a>
         </div>
-		  <div ><!-- class="col-xs-6 col-sm-6 col-lg-12 col-md-6 " -->
+		  <div >
         <ul class="brand-groups count" >
           <li class="brand-group "  v-for="items in brandMan" >
             <span class="brand-group-title">{{items.letter}}</span>

@@ -49,6 +49,20 @@
 				</div>
 			</div>
 		</div>
+		<div class="womantext container-fluid">
+			<div class="header">
+			  <h2 class="heading">注目品牌</h2>
+			  <a href="">全部品牌</a>
+			</div>
+			<ul class="ground count">
+				<li v-for="item in text"class="bott">
+					<span>{{item.title}}</span>
+					<ul class="lii">
+						<li v-for="tt in item.value"><a>{{tt}}</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -60,7 +74,28 @@
 		data(){
 			return{
 				womenCloses:[],
-				women2Closes:[]
+				women2Closes:[],
+				text:[
+					{title:'#',value:['1017 ALYX 9SM']},
+					{title:'A',value:['A.P.C.','ACNE STUDIOS','ADER ERROR','ADIDAS ORIGINALS','ALEXANDER MCQUEEN','ALEXANDER WANG','ALEXANDER WANG.T','AMBUSH','ASICS']},
+					{title:'B',value:['BOTTEGA VENETA','BURBERRY','BY FAR']},
+					{title:'C',value:['CHLOÉ','COMMON PROJECTS','CONVERSE']},
+					{title:'D',value:["D'HEYGERE",'DION LEE','DR. MARTENS']},
+					{title:'E',value:['EYTYS']},
+					{title:'G',value:['GANNI']},
+					{title:'H',value:['HELMUT LANG','HERON PRESTON','HYEIN SEO']},
+					{title:'J',value:['JUSTINE CLENQUET','JW ANDERSON']},
+					{title:'K',value:['KANGOL','KIRIN','KOCHÉ']},
+					{title:'L',value:['LAURA LOMBARDI','LOEWE']},
+					{title:'M',value:['MAISIE WILEN','MAISON KITSUNE','MAISON MARGIELA','MARINE SERRE','MARTINE ROSE','MISBHV','MM6 MAISON MARGIELA','MONCLER']},
+					{title:'N',value:['NANA-NANA','NANUSHKA','NEW BALANCE','NIKE']},
+					{title:'O',value:['OFF-WHITE']},
+					{title:'P',value:['PALM ANGELS','PARIS TEXAS','PRADA']},
+					{title:'S',value:['SPORTY & RICH','STAND STUDIO','STAUD','STELLA MCCARTNEY','STUSSY']},
+					{title:'T',value:['THOM BROWNE','TOGA PULLA']},
+					{title:'V',value:['VANS','VERDY X MINIONS','VERSACE']},
+					{title:'W',value:['WE11DONE']},
+				]
 			}
 		},
 		created() {
@@ -145,5 +180,67 @@
 	}
 	.banner-txt2 a:last-child{
 		margin-left: .16rem;
+	}
+	.womantext{
+		border-top: 1px solid #000;
+		padding-top: 0.3rem;
+		padding-bottom: 0.3rem;
+		margin: 0 30px;
+		font-size: 0.12rem;
+		color: #000;
+		font-weight: 700;
+	}
+	
+  @media (max-width:768px) {
+	  .count{
+				column-count: 2;
+				column-gap: 30px;
+				break-inside: avoid; 
+		  }
+	}
+	@media (min-width: 768px){
+		 .count{
+			column-count: 4;
+			column-gap: 30px;
+			break-inside: avoid; 
+		 }
+	}
+	.header {
+	  display: flex;
+	  align-items: flex-end;
+	  margin-bottom: 0.2rem;
+		
+	}
+	.header h2{
+		  margin: 0;
+		  font-size: 18px;
+	}
+	.header a{
+		 color: #000;
+		 margin-left: .15rem;
+		 text-decoration:underline; 
+		 font-weight: 500;
+	}
+	.header a:hover{
+		  text-decoration: none;
+		  color: #ccc;
+	}
+	.ground{
+		list-style: none;
+	}
+	.bott{
+		margin-bottom: 0.15rem;
+	}
+	
+	.lii{
+		list-style: none;
+	}
+	.lii a{
+		color: #000;
+	}
+	.lii a:hover{
+		color: #ccc;
+		text-decoration: none;
+		cursor: pointer;
 	}
 </style>
