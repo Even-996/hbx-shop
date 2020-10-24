@@ -1,0 +1,193 @@
+<template>
+  <div class="tab-content">
+        <p>以 Facebook 或 Google 帐号登入</p>
+        <div>
+          <a href="#" class="btn btn-facebook btn-block">以 Facebook 或 Google 帐号登入</a>
+          <a href="#" class="btn btn-google btn-block">以 Google 帐号登入</a>
+          <a href="#" class="btn btn-apple btn-block">
+            Log in with Apple
+          </a>
+        </div>
+        <div class="or">
+          <span>Or</span>
+        </div>
+        <p>以电邮地址登入</p>
+        <form action="#" method="post" class="form">
+          <div class="form-group">
+            <label for="username">电邮地址/用户名称</label>
+            <input type="text" id="username" name="_username" class="form-control" value/>
+          </div>
+          <div class="form-group">
+            <label for="password">密码</label>
+            <input type="text" id="password" name="_password" class="form-control" value/>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="form-group form-check">
+                <input class="form-check-input" id="checkbox_remember_me" type="checkbox" name="_remember_me"
+                       value="on"/>
+                <label class="form-check-label">记住我吗？</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group text-md-right">
+                <a class="text-uppercase">忘记密码？</a>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-block" title="login" type="submit">登入</button>
+            </div>
+          </div>
+        </form>
+      </div>
+</template>
+
+<script>
+export default {
+  name: "ExLogin.vue"
+}
+</script>
+
+<style scoped>
+.tab-content {
+  padding: 30px;
+}
+
+p {
+  margin-top: 0;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  /*padding: .375rem .75rem;*/
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+.btn-facebook {
+  color: #fff;
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.btn-google {
+  color: #fff;
+  background-color: #cc3732;
+  border-color: #cc3732;
+}
+
+.btn-apple {
+  color: #fff;
+  background-color: #000;
+  border-color: #333;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+button[title]{
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+}
+
+.or {
+  width: 100%;
+  margin: 30px 0;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  line-height: 0;
+  color: #999999;
+}
+
+.form-group {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.form-group > label:not(.form-check-label) {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+label {
+  display: inline-block;
+}
+
+.form-control {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #000;
+  border-radius: 0;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-control {
+  border-color: #eee;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.form-control:focus{
+border-color:#ccc;
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.form-group > label.form-check-label {
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: .18rem;
+}
+
+.form-check {
+  padding-left: .01rem;
+}
+
+
+.tab-content .form a {
+  text-decoration: underline;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+input[type='text']{
+    font-size: .15rem;
+}
+
+</style>

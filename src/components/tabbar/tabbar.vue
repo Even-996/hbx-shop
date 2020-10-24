@@ -315,17 +315,6 @@
 				}
 			})
 		},
-		mounted() {
-			var a = this.$refs['langues']
-			for (let i = 0; i < a.childNodes.length; i++) {
-				a.childNodes[i].childNodes[0].childNodes[0].style.height = 25 + 'px'
-				a.childNodes[i].childNodes[0].childNodes[0].src = require('../../assets/img/' + i + '.png')
-				if (i % 2 == 1) {
-					a.childNodes[i].childNodes[0].childNodes[0].style.position = 'relative'
-					a.childNodes[i].childNodes[0].childNodes[0].style.left = 0
-				}
-			}
-		},
 		methods: {
 			closeGoods() {
 				this.drawer = false
@@ -792,7 +781,7 @@
 		background-position: -310px -342px;
 	}
 	.isactive{
-		color: red!important;
+		color: pink!important;
 	}
 </style>
 <style>
