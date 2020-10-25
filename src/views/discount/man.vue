@@ -229,7 +229,7 @@ export default {
           },
         });
         console.log("111");
-      }, 200);
+      }, 500);
     },
     loadData() {
       getHomeMultData()
