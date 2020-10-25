@@ -192,25 +192,30 @@ export default {
   },
   computed: {},
   methods: {
-    initSwiper() {
-      this.mySwiper = new Swiper(".swiper-container", {
-        slidesPerView: this.page,
-        spaceBetween: 30,
-        // slidesPerGroup: this.page,
-        // loop: false,
-        // loopFillGroupWithBlank: true,
-        freeMode: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+    setTimeout(function () {
 
-      });
-    },
+      initSwiper() {
+
+        this.mySwiper = new Swiper(".swiper-container", {
+          slidesPerView: this.page,
+          spaceBetween: 30,
+          // slidesPerGroup: this.page,
+          // loop: false,
+          // loopFillGroupWithBlank: true,
+          freeMode: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+
+        });
+      },
+    }, 200),
+
     loadData(){
       getHomeMultData().then(res=>{
         this.saleCloses1 = res.data.salecloses1;
@@ -232,12 +237,14 @@ export default {
     } else {
       this.page = 4;
     }
-    this.initSwiper();
     this.loadData();
 
+    this.initSwiper();
 
   },
   mounted() {
+
+
     const that = this;
     window.onresize = () => {
       return (() => {
