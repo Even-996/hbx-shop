@@ -153,6 +153,7 @@
 		border-top:1px inset #ddd ;
 		background-color: #fafafa;
 		text-align: center;
+		width: 1rem;
 	}
 	.table th,td{
 		border: 1px inset #ddd;
