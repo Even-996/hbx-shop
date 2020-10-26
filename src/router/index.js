@@ -20,8 +20,8 @@ const Rule = () => import('../views/help/help-children/Rule');
 const Tax = () => import('../views/help/help-children/Tax');
 const Register = () => import('../views/login/loginitem/Register');
 const ExLogin = () => import('../views/login/loginitem/ExLogin');
-
-
+const DetailHave = ()=> import('../views/detail/DetailHave')
+const DetailSold=() => import('../views/detail/DetailSold')
 
 const routes = [
     {
@@ -108,6 +108,14 @@ const routes = [
 	{
 	    path: '/bags',
 	    component: Bags
+	},
+	{
+		path: '/detail-have',
+		component: DetailHave
+	},
+	{
+		path: '/detail-sold',
+		component: DetailSold
 	}
     
 

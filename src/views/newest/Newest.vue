@@ -19,12 +19,15 @@
           :src="item.img1"
           @mouseenter="imageChange(item)"
           @mouseleave="imageLeaveChange(item)"
+          @click="transToDetail(item)"
+
         />
         <img
           v-show="!item.isshow && item.img2"
           :src="item.img2"
           @mouseenter="imageChange(item)"
           @mouseleave="imageLeaveChange(item)"
+          @click="transToDetail(item)"
         /><br />
         <br />
         <div class="title"
@@ -32,11 +35,11 @@
         @mouseleave="imageLeaveChange(item)"
 		    >
 			<span>{{ item.time }}</span>
-			<router-link to="#">{{ item.name }}</router-link>
-			<span  class="nosell_all" v-if="!item.num">{{ item.state }}</span>
+			<router-link to="#" @click="transToDetail(item)">{{ item.name }}</router-link>
+			<span @click="transToDetail(item)" class="nosell_all" v-if="!item.num">{{ item.state }}</span>
 <!--            v-show="!item.isshow"-->
-			<router-link v-if="item.num" to="#">{{item.state}}</router-link>
-            <router-link to="#"   v-if="!item.isshow && item.num" class="lookQuit">快速查看</router-link>
+			<router-link @click="transToDetail(item)" v-if="item.num" to="#">{{item.state}}</router-link>
+            <router-link to="#" @click="transToDetail(item)"  v-if="!item.isshow && item.num" class="lookQuit">快速查看</router-link>
         </div>
       </el-col>
     </el-row>
@@ -114,6 +117,13 @@
 
         }).catch(error=>{
         })
+      },
+      transToDetail(item){
+        if(item.num){
+            this.$router.push("/detail-have");
+        }else {
+            this.$router.push("/detail-sold");
+        }
       }
   },
 };
