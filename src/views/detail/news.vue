@@ -70,7 +70,9 @@ ul{
 }
 li{
   line-height: 14px;
-  text-align: center;
   font-size: 4px;
+}
+.scroll-content>li{
+  text-align: center;
 }
 </style>
