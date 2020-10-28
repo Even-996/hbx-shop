@@ -195,7 +195,7 @@
     <!-- <detail-param></detail-param> -->
 </div>
 </template>
-
+ 
 <script>
     import DetailParam from './DetailParam'
     export  default {
