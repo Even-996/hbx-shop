@@ -116,6 +116,7 @@
       </div>
     </div>
   </div>
+  <DetailParam />
 </div>
   
 </template>
@@ -123,9 +124,11 @@
 <script>
 import Swiper from "swiper";
 import News from "./news"
+import DetailParam from "./DetailParam"
 export default {
   components:{
-    News
+    News,
+    DetailParam
   },
   mounted() {
     this.initSwiper();
