@@ -133,7 +133,7 @@
     <el-row class="hidden-md-and-up moblie">
         <div class="img_swiper">
             <template>
-                <el-carousel indicator-position="outside" arrow="never">
+                <el-carousel indicator-position="outside" arrow="never" :autoplay="false">
                     <el-carousel-item v-for="(item,index) in img1" :key="index">
                     <img :src="item">
                     </el-carousel-item>
@@ -192,7 +192,8 @@
             </div>
         </div>
     </el-row>
-    <!-- <detail-param></detail-param> -->
+    <br><br><br>
+    <detail-param></detail-param>
 </div>
 </template>
  
