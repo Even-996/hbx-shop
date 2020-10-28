@@ -68,11 +68,9 @@ export default {
 ul{
   margin-top: 1px;
 }
-li{
-  line-height: 14px;
-  font-size: 4px;
-}
 .scroll-content>li{
   text-align: center;
+  line-height: 14px;
+  font-size: 4px;
 }
 </style>
