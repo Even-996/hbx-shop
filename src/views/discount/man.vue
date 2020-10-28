@@ -229,7 +229,6 @@ export default {
             prevEl: ".swiper-button-prev",
           },
         });
-        console.log("111");
       }, 500);
     },
     loadData() {

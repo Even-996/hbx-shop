@@ -51,6 +51,10 @@
 		.container-sm {
 			width: 100%;
 			margin: 20px auto;
+			max-width: 568px;
+		}
+		#login-register-container{
+			margin: 0 auto;
 		}
 	}
 
@@ -59,7 +63,12 @@
 		.container,
 		.container-md,
 		.container-sm {
+			margin: 90px auto;
 			max-width: 720px;
+		}
+		#login-register-container{
+			width: 568px;
+			margin: 0 auto;
 		}
 	}
 
@@ -88,8 +97,7 @@
 	}
 
 	#login-register-container {
-		width: 570px;
-		margin: 90px auto 50px;
+		/* width: 570px; */
 		border: 1px solid #000;
 		font-size: 14px;
 	}
