@@ -399,6 +399,7 @@
 
 	.drop_title img {
 		font-size: 12px;
+		padding: 15px;
 	}
 
 	.btn_close {
@@ -411,7 +412,7 @@
 
 	.drop_clothse ul li {
 		font-size: 15px;
-		padding: 15px 5px;
+		padding: 15px ;
 		font-weight: 600;
 	}
 	.drop_clothse ul a li{
@@ -423,7 +424,7 @@
 
 	.drop_other_goods ul li {
 		font-size: 15px;
-		padding: 15px 5px;
+		padding: 15px ;
 		font-weight: 600;
 		
 	}
