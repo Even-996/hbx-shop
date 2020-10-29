@@ -17,7 +17,7 @@
           <a href="" class="a2">运动鞋</a>
         </el-breadcrumb-item>
         <el-breadcrumb-item>
-          <a href="" class="a2">CONVERSE</a>
+          <a href="" class="a2">{{itemClose.subname}}</a>
         </el-breadcrumb-item>
       </el-breadcrumb>
     </div>
@@ -33,18 +33,38 @@
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
                         <div class="carousel-cell is-selected">
-                          <img class="img-fluid loading" src="https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F1c%2Ff0%2FShoes_2_1-3a901de4694c3ee66d031af985c8.jpg?fit=max&q=90&w=640&h=832&v=1" alt="">
+                          <img class="img-fluid loading" :src="itemClose.img2" alt="">
                         </div>
                       </div>
                       <div class="swiper-slide">
                         <div class="carousel-cell is-selected">
-                          <img class="img-fluid loading" src="https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F1c%2Ff0%2FShoes_2_1-3a901de4694c3ee66d031af985c8.jpg?fit=max&q=90&w=640&h=832&v=1" alt="">
+                          <img class="img-fluid loading" :src="itemClose.img1" alt="">
                         </div>
                       </div>
-                      <div class="swiper-slide">Slide 3</div>
-                      <div class="swiper-slide">Slide 4</div>
-                      <div class="swiper-slide">Slide 5</div>
-                      <div class="swiper-slide">Slide 6</div>
+                      <div class="swiper-slide" v-if="itemClose.img3">
+                        <div class="carousel-cell is-selected">
+                          <img class="img-fluid loading" :src="itemClose.img3" alt="">
+                        </div>
+                      </div>
+                      <div class="swiper-slide" v-if="itemClose.img4">
+                        <div class="carousel-cell is-selected">
+                          <img class="img-fluid loading" :src="itemClose.img4" alt="">
+                        </div>
+                      </div>
+                      <div class="swiper-slide" v-if="itemClose.img5">
+                        <div class="carousel-cell is-selected">
+                          <img class="img-fluid loading" :src="itemClose.img5" alt="">
+                        </div>
+                      </div>
+                      <div class="swiper-slide" v-if="itemClose.img6">
+                        <div class="carousel-cell is-selected">
+                          <img class="img-fluid loading" :src="itemClose.img6" alt="">
+                        </div>
+                      </div>
+<!--                      <div class="swiper-slide">Slide 3</div>-->
+<!--                      <div class="swiper-slide">Slide 4</div>-->
+<!--                      <div class="swiper-slide">Slide 5</div>-->
+<!--                      <div class="swiper-slide">Slide 6</div>-->
                     </div>
                     <!-- Add Pagination -->
                     <!-- <div class="swiper-pagination"></div> -->
@@ -58,14 +78,14 @@
               <div id="product-summary-content-wrapper">
                 <div id="product-summary-content">
                   <div class="info product-name-price-container">
-                    <h1 class="brand-name"><a href="" class="d-block">Converse</a></h1>
-                    <h2 class="name">Converse x Feng Chen Wang Chuck 70 Hi 2 In 1</h2>
+                    <h1 class="brand-name"><a href="" class="d-block">{{itemClose.subname}}</a></h1>
+                    <h2 class="name">{{itemClose.name}}</h2>
                     <div class="offers">
                       <span class="price">
-                        <span class="regular-price">USD 203</span>
+                        <span class="regular-price">{{itemClose.size}}</span>
                         <small class="text-muted">
                           <span class="separator">/</span>
-                          售价 CNY 1357
+                          售价 CNY {{itemClose.price}}
                         </small>
                       </span>
                       <link href="http://schema.org/InStock">
@@ -73,8 +93,8 @@
                   </div>
                   <p class="sold-out-msg">抱歉，此商品没有存货</p>
                   <div id="shop-links">
-                    <a href="" class="a1">选购 Converse</a>
-                    <a href="" class="a1">选购 运动鞋</a>
+                    <a href="" class="a1">选购 {{itemClose.subname}}</a>
+                    <a href="" class="a1">立即选购</a>
                   </div>
                   <hr>
                   <div class="share-wishlist-container">
@@ -128,10 +148,19 @@ import DetailParam from "./DetailParam"
 export default {
   components:{
     News,
-    DetailParam
+    DetailParam,
+    itemClose:{}
   },
   mounted() {
+
     this.initSwiper();
+
+  },
+  created(){
+    let item =  this.$route.query;
+    this.itemClose = item;
+
+    console.log(this.itemClose);
   },
   methods: {
     initSwiper:function () {

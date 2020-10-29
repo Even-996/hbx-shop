@@ -13,7 +13,9 @@ import './assets/icon/iconfont.css';
 
 
 // Vue.config.productionTip = false
-
+router.afterEach((to,from,next)=>{
+  window.scroll(0,0);
+})
 
 Vue.use(ElementUI)
 new Vue({

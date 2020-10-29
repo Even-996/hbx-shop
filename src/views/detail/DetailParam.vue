@@ -109,7 +109,7 @@
 	}
 	.det h1{
 		text-align: center;
-		font-size: 32px;
+		font-size: 0.32rem;
 		font-weight: 700;
 		margin: 0 0 30px;
 	}

@@ -15,15 +15,15 @@
         :key="index"
       >
         <img
-          v-show="item.isshow || !item.img2"
+          v-show="item.isshow || !item.num"
           :src="item.img1"
-          @mouseenter="imageChange(item)"
-          @mouseleave="imageLeaveChange(item)"
+          @mouseenter=" imageChange(item)"
+          @mouseleave="imageLeaveChange(item) "
           @click="transToDetail(item)"
 
         />
         <img
-          v-show="!item.isshow && item.img2"
+          v-show="!item.isshow && item.img2 && item.num"
           :src="item.img2"
           @mouseenter="imageChange(item)"
           @mouseleave="imageLeaveChange(item)"
@@ -39,7 +39,7 @@
 			<span @click="transToDetail(item)" class="nosell_all" v-if="!item.num">{{ item.state }}</span>
 <!--            v-show="!item.isshow"-->
 			<router-link @click="transToDetail(item)" v-if="item.num" to="#">{{item.state}}</router-link>
-            <router-link to="#" @click="transToDetail(item)"  v-if="!item.isshow && item.num" class="lookQuit">快速查看</router-link>
+            <router-link to="#" @click="transToDetail(item)"  v-if="!item.isshow" class="lookQuit">快速查看</router-link>
         </div>
       </el-col>
     </el-row>
@@ -106,9 +106,11 @@
         },
   methods: {
     imageChange(item) {
+       // if(item.num)
        item.isshow = 0;
     },
     imageLeaveChange(item) {
+        // if(item.num)
         item.isshow = 1;
     },
       loadData(){
@@ -120,9 +122,9 @@
       },
       transToDetail(item){
         if(item.num){
-            this.$router.push("/detail-have");
+            this.$router.push({ path:"/detail-have",query: item});
         }else {
-            this.$router.push("/detail-sold");
+            this.$router.push({path:"/detail-sold",query:item});
         }
       }
   },

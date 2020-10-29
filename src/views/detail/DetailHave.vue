@@ -6,16 +6,16 @@
     <el-breadcrumb-item>女装</el-breadcrumb-item>
     <el-breadcrumb-item>鞋履</el-breadcrumb-item>
     <el-breadcrumb-item>运动鞋</el-breadcrumb-item>
-    <el-breadcrumb-item>CONVERSE</el-breadcrumb-item>
+    <el-breadcrumb-item>{{itemClose.subname}}</el-breadcrumb-item>
     </el-breadcrumb>
     <el-row :gutter="20" class="content">
     <el-col :span="3" :offset="1" class="content_left" >
-        <ul v-for="(item,index) in img" :key="index" ref="imgleft">
-            <li @click="changeImg(index)"><img :src="item"></li>
+        <ul v-for="(item,index) in img1" :key="index" ref="imgleft">
+            <li @click="changeImg(index)" ><img v-if="item" :src="item"></li>
         </ul>
     </el-col>
     <el-col :span="10" class="content_index" >
-        <img :src="img[ischoose]" ref="box" @mouseover="moveStart()" @mouseleave="moveEnnd()">
+        <img :src="img1[ischoose]" ref="box" @mouseover="moveStart()" @mouseleave="moveEnnd()">
         <div class="s_box" ref="sbox"  @mouseover="moveStart()" @mouseleave="moveEnnd()"></div>
     </el-col>
     <el-col :span="10" class="content_left">
@@ -23,8 +23,8 @@
 				<img :src="img1[ischoose]" class="big-img" ref="bimg">
 		</div>
         <div class="content_box">
-            <router-link to="#"><h5>CONVERSE</h5></router-link>
-            <h1>CONVERSE X FENG CHEN WANG CHUCK 70 HI 2 IN 1</h1>
+            <router-link to="#"><h5>{{itemClose.subname}}</h5></router-link>
+            <h1>{{itemClose.name}}</h1>
             <span>USD 179</span>
             <div class="content_box_4">
                 <span>4 Interest-Free Installments available by  </span>
@@ -103,14 +103,14 @@
             <div class="num">
                 <span>数量</span>
                 <div class="num_change">
-                    <span><el-button :disabled="num==1" @click="changeNum('-')">-</el-button></span>
-                    <input type="text" v-model="num">
-                    <span><el-button :disabled="num==10" @click="changeNum('+')">+</el-button></span>
+                    <span><el-button :disabled="itemClose.num==1" @click="changeNum('-')">-</el-button></span>
+                    <input type="text" v-model="itemClose.num">
+                    <span><el-button :disabled="itemClose.num==10" @click="changeNum('+')">+</el-button></span>
                 </div>
             </div>
             <div class="add_car">
                 <el-button class="add_car_btn" v-show="!radio1" :disabled="!radio1">请选择一个尺码</el-button>
-                <el-button v-show="radio1" :disabled="!radio1">加入到购物袋</el-button>
+                <el-button v-show="radio1" :disabled="!radio1" @click="transToGoShop">加入到购物袋</el-button>
                 <!-- <el-button :disabled="!radio1">前往付款</el-button> -->
             </div>
             <div class="footer">
@@ -135,7 +135,7 @@
             <template>
                 <el-carousel indicator-position="outside" arrow="never" :autoplay="false">
                     <el-carousel-item v-for="(item,index) in img1" :key="index">
-                    <img :src="item">
+                    <img v-if="item" :src="item">
                     </el-carousel-item>
                 </el-carousel>
             </template>
@@ -201,7 +201,8 @@
     import DetailParam from './DetailParam'
     export  default {
         components:{
-            DetailParam
+            DetailParam,
+            itemClose: {}
         },
         data() {
             return {
@@ -209,23 +210,32 @@
                 radio1:null,
                 num:1,
                 size:null,
-                img:[
-                    'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F8f%2F62%2FShoes_1_1-5e218961fb0b4b96d3e3fd4a8fc7.jpg?fit=max&q=90&w=640&h=832&v=1',
-                    'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F34%2F33%2FShoes_1_2-9658a1bd34aac459a81ad8cae337.jpg?fit=max&q=90&w=640&h=832&v=1',
-                    'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fb1%2F4c%2FShoes_1_3-104748bfc713393365c4139b77c9.jpg?fit=max&q=90&w=640&h=832&v=1',
-                    'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F8c%2F4f%2FShoes_1_4-b880453e250ce26310fb989eadd5.jpg?fit=max&q=90&w=640&h=832&v=1',
-                    'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F6e%2F46%2FShoes_1_5-1e794014c84d2d8cf5b1b5f018ee.jpg?fit=max&q=90&w=640&h=832&v=1',
-                    'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fd8%2Fdc%2FShoes_1_6-8f053d862d1ab9bb238f989d44b3.jpg?fit=max&q=90&w=640&h=832&v=1'
-                    ],
-                    img1:[
-                        'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F8f%2F62%2FShoes_1_1-5e218961fb0b4b96d3e3fd4a8fc7.jpg?fit=max&q=90&w=640&h=832&v=1',
-                        'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F34%2F33%2FShoes_1_2-9658a1bd34aac459a81ad8cae337.jpg?fit=max&q=90&w=640&h=832&v=1',
-                        'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fb1%2F4c%2FShoes_1_3-104748bfc713393365c4139b77c9.jpg?fit=max&q=90&w=640&h=832&v=1',
-                        'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F8c%2F4f%2FShoes_1_4-b880453e250ce26310fb989eadd5.jpg?fit=max&q=90&w=640&h=832&v=1',
-                        'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F6e%2F46%2FShoes_1_5-1e794014c84d2d8cf5b1b5f018ee.jpg?fit=max&q=90&w=640&h=832&v=1',
-                        'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fd8%2Fdc%2FShoes_1_6-8f053d862d1ab9bb238f989d44b3.jpg?fit=max&q=90&w=640&h=832&v=1'
-                    ]
+                // img:[
+                //     'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F8f%2F62%2FShoes_1_1-5e218961fb0b4b96d3e3fd4a8fc7.jpg?fit=max&q=90&w=640&h=832&v=1',
+                //     'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F34%2F33%2FShoes_1_2-9658a1bd34aac459a81ad8cae337.jpg?fit=max&q=90&w=640&h=832&v=1',
+                //     'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fb1%2F4c%2FShoes_1_3-104748bfc713393365c4139b77c9.jpg?fit=max&q=90&w=640&h=832&v=1',
+                //     'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F8c%2F4f%2FShoes_1_4-b880453e250ce26310fb989eadd5.jpg?fit=max&q=90&w=640&h=832&v=1',
+                //     'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F6e%2F46%2FShoes_1_5-1e794014c84d2d8cf5b1b5f018ee.jpg?fit=max&q=90&w=640&h=832&v=1',
+                //     'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fd8%2Fdc%2FShoes_1_6-8f053d862d1ab9bb238f989d44b3.jpg?fit=max&q=90&w=640&h=832&v=1'
+                //     ],
+                //     img1:[
+                //         'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F8f%2F62%2FShoes_1_1-5e218961fb0b4b96d3e3fd4a8fc7.jpg?fit=max&q=90&w=640&h=832&v=1',
+                //         'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F34%2F33%2FShoes_1_2-9658a1bd34aac459a81ad8cae337.jpg?fit=max&q=90&w=640&h=832&v=1',
+                //         'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fb1%2F4c%2FShoes_1_3-104748bfc713393365c4139b77c9.jpg?fit=max&q=90&w=640&h=832&v=1',
+                //         'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F8c%2F4f%2FShoes_1_4-b880453e250ce26310fb989eadd5.jpg?fit=max&q=90&w=640&h=832&v=1',
+                //         'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F6e%2F46%2FShoes_1_5-1e794014c84d2d8cf5b1b5f018ee.jpg?fit=max&q=90&w=640&h=832&v=1',
+                //         'https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fd8%2Fdc%2FShoes_1_6-8f053d862d1ab9bb238f989d44b3.jpg?fit=max&q=90&w=640&h=832&v=1'
+                //     ]
+                img1: [],
+                itemClose:{}
             }
+        },
+        created(){
+            this.itemClose = this.$route.query;
+            this.img1.push(this.itemClose.img1,this.itemClose.img2,this.itemClose.img3,this.itemClose.img4,
+                this.itemClose.img5,this.itemClose.img6);
+            console.log(this.itemClose);
+            console.log(this.img1)
         },
         methods: {
             changeImg(index){
@@ -279,7 +289,16 @@
                 big.style.display='none'
             },
             changeNum(way){
+                console.log(way)
+                if(way == '-' && this.itemClose.num > 1)
+                    this.itemClose.num --;
+                if(way == '+')
+                    this.itemClose.num ++;
+
                 console.log(way);
+            },
+            transToGoShop(){
+                this.$router.push({path:'/bags'});
             }
         },
 
