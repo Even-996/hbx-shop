@@ -143,7 +143,7 @@
 
 <script>
 import Swiper from "swiper";
-import News from "./news"
+import News from "../../components/news"
 import DetailParam from "./DetailParam"
 export default {
   components:{

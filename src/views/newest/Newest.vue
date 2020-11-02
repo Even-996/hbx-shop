@@ -116,7 +116,6 @@
       loadData(){
         getHomeMultData().then(res=>{
             this.newcloses = res.data.newcloses;
-
         }).catch(error=>{
         })
       },
