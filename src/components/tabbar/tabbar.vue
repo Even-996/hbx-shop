@@ -507,7 +507,7 @@
 	}
 
 	.choose_goods_show li a:hover {
-		color: pink;
+		color: #000;
 	}
 
 	.all_goods_show>ul:nth-last-child(1) ul li {
@@ -782,7 +782,7 @@
 		background-position: -310px -342px;
 	}
 	.isactive{
-		color: pink!important;
+		background-color: #eee;
 	}
 </style>
 <style>
