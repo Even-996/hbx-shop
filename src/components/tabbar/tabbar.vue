@@ -521,6 +521,43 @@ img {
   margin-top:-19px;
 }
 
+.all_goods_show .show_choose_goods:nth-of-type(1):before {
+  content:"";
+  border:10px solid transparent;
+  border-bottom-color:black;
+  position:absolute;
+  left:40px;
+  top: -1px;
+  margin-top:-20px;
+}
+.all_goods_show .show_choose_goods:nth-of-type(1):after {
+  content:"";
+  border:10px solid transparent;
+  border-bottom-color:white;
+  position: absolute;
+  top:0;
+  left:40px;
+  margin-top:-19px;
+}
+.all_goods_show .show_choose_goods:nth-of-type(2):before {
+  content:"";
+  border:10px solid transparent;
+  border-bottom-color:black;
+  position:absolute;
+  left:80px;
+  top: -1px;
+  margin-top:-20px;
+}
+.all_goods_show .show_choose_goods:nth-of-type(2):after {
+  content:"";
+  border:10px solid transparent;
+  border-bottom-color:white;
+  position: absolute;
+  top:0;
+  left:80px;
+  margin-top:-19px;
+}
+
 .choose_goods_show h4 {
   font-weight: 800;
 }
@@ -761,6 +798,7 @@ img {
 .search_btn input {
   position: absolute;
   top: 20px;
+  font-weight: 16px;
   padding-left: 15px;
   width: 88%;
   height: 100%;
@@ -851,444 +889,6 @@ img {
 .isactive {
   color: pink !important;
 }
-	a {
-		color: black;
-	}
-	a:focus, a:hover {
-    text-decoration: none;
-    }
-	.herder_content {
-		width: 100%;
-		height: 65px;
-		line-height: 65px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border-bottom: 1px solid #000;
-	}
-
-	.herder_content ul li {
-		float: left;
-		padding: 0 0.12rem;
-		font-weight: 600;
-		font-size: 14px;
-		list-style-type: none;
-	}
-
-	.title_hbx {
-		line-height: 100%;
-		position: absolute;
-		left: 47.5%;
-	}
-
-	@media (max-width: 768px) {
-		.title_hbx {
-			position: absolute;
-			left: 42%;
-		}
-	}
-
-	.title_hbx img {
-		width: 70px;
-	}
-
-	.show_goods {
-		font-size: 25px;
-	}
-
-	.drop_title {
-		height: 65px;
-		border-bottom: 1px solid #000;
-		font-size: 20px;
-		line-height: 65px;
-	}
-
-	.drop_title img {
-		font-size: 12px;
-		padding: 15px;
-	}
-
-	.btn_close {
-		float: right;
-	}
-
-	.drop_clothse {
-		border-bottom: 1px solid #000;
-	}
-
-	.drop_clothse ul li {
-		font-size: 15px;
-		padding: 15px ;
-		font-weight: 600;
-	}
-	.drop_clothse ul a li{
-		color: #000;
-	}
-	.drop_clothse_right {
-		float: right;
-	}
-
-	.drop_other_goods ul li {
-		font-size: 15px;
-		padding: 15px ;
-		font-weight: 600;
-
-	}
-	.drop_other_goods ul a li{
-		font-size: 14px!important;
-		font-weight: 600;
-		color: #000;
-		outline: none;
-	}
-	.drop_other_goods ul a {
-		text-decoration: none;
-	}
-	.drop_other_goods ul li:nth-last-child(1) {
-		font-size: 8px;
-	}
-
-	ul {
-		margin-bottom: 0 !important;
-	}
-
-	.img_cna img {
-		width: 30px;
-		position: relative;
-		top: 4px;
-		right: 5px;
-	}
-
-	.el-drawer.ltr {
-		overflow: scroll;
-	}
-
-	img {
-		vertical-align: baseline !important;
-	}
-
-	.show_choose_goods {
-		position: absolute;
-		top: 65px;
-		border: 1px solid black;
-		border-top: none;
-		background-color: white;
-		z-index: 1;
-		margin-left: -10px;
-		padding: 10px 20px 20px 30px;
-	}
-
-	.show_choose_goods::before {
-		position: absolute;
-		content: "";
-		display: block;
-		width: 0;
-		height: 0;
-		border-left: 7px solid transparent;
-		border-right: 7px solid transparent;
-		border-bottom: 7px solid rgb(15, 15, 15);
-		margin-left: -8px;
-		margin-top: -19px;
-	}
-
-	.choose_goods_show h4 {
-		font-weight: 800;
-	}
-
-	.choose_goods_show {
-		float: left;
-		padding: 0 20px;
-		font-weight: 800;
-	}
-
-	.choose_goods_show li {
-		clear: both;
-		padding: 0 !important;
-		line-height: 30px;
-		font-size: 8px;
-
-	}
-
-	.choose_goods_show li a {
-		color: rgb(121, 120, 120)
-	}
-
-	.choose_goods_show li a:hover {
-		color: #000;
-	}
-
-	.all_goods_show>ul:nth-last-child(1) ul li {
-		width: 100%;
-		text-align: center;
-	}
-
-	.all_goods_show>ul:nth-last-child(1) ul li a {
-		color: #000;
-		padding-left: 13px;
-	}
-
-	.all_goods_show>ul:nth-last-child(1) ul {
-		margin-left: -30px;
-	}
-
-	.all_goods_show>ul:nth-last-child(1) ul::before {
-		display: none;
-	}
-
-	.all_goods_show>ul:nth-last-child(1) ul ul::after {
-		position: absolute;
-		content: "";
-		display: block;
-		width: 0;
-		height: 0;
-		border-left: 7px solid transparent;
-		border-right: 7px solid transparent;
-		border-bottom: 7px solid rgb(15, 15, 15);
-		margin-left: 28px;
-		margin-top: -29px;
-	}
-
-	.hetp_box {
-		position: absolute;
-		width: 200px;
-		border: 1px solid #000;
-		border-top: none;
-		margin-left: -80px;
-		padding-bottom: 10px;
-		z-index: 1;
-		background-color: white;
-	}
-
-	.hetp_box ul li {
-		clear: both;
-		padding: 0;
-		font-size: 12px;
-		line-height: 30px;
-		margin-left: 73px;
-	}
-
-	.hetp_box ul li a {
-		color: rgb(121, 119, 116);
-	}
-
-	.hetp_box ul li a:hover {
-		color: pink;
-	}
-
-	.hetp_box ul li:nth-of-type(3) {
-		margin-left: 84px;
-	}
-
-	.hetp_box::before {
-		position: absolute;
-		content: "";
-		display: block;
-		width: 0;
-		height: 0;
-		border-left: 7px solid transparent;
-		border-right: 7px solid transparent;
-		border-bottom: 7px solid rgb(15, 15, 15);
-		margin-top: -8px;
-		margin-left: 85px;
-	}
-
-	.show_bags {
-		position: absolute;
-		width: 400px;
-		border: 1px solid black;
-		border-top: none;
-		right: 90px;
-		text-align: center;
-		background-color: white;
-		z-index: 1;
-	}
-
-	.show_bags span {
-		font-size: 14px;
-		font-weight: 700;
-	}
-
-	.show_bags a {
-		padding: 17px 120px;
-		background-color: #000;
-		color: white;
-		font-size: 16px;
-		text-decoration: none;
-	}
-
-	.show_bags::before {
-		position: absolute;
-		content: "";
-		display: block;
-		width: 0;
-		height: 0;
-		border-left: 7px solid transparent;
-		border-right: 7px solid transparent;
-		border-bottom: 7px solid rgb(15, 15, 15);
-		margin-top: -8px;
-		margin-left: 350px;
-	}
-
-	.cny {
-		width: 400px;
-		border: 1px solid black;
-		border-top: none;
-		position: absolute;
-		right: 0;
-		background-color: white;
-		z-index: 1;
-		padding-left: 20px;
-	}
-
-	.cny::before {
-		position: absolute;
-		content: "";
-		display: block;
-		width: 0;
-		height: 0;
-		right: 15px;
-		border-left: 7px solid transparent;
-		border-right: 7px solid transparent;
-		border-bottom: 7px solid rgb(15, 15, 15);
-		top: -8px;
-		z-index: 2;
-	}
-
-	.cny_top ul li {
-		padding: 0;
-		padding-right: 100px;
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 30px;
-	}
-
-	.search_btn {
-		width: 298px;
-		height: 38px;
-		border: 1px solid #000;
-		border-top: none;
-		position: absolute;
-		right: 200px;
-		overflow: hidden;
-		z-index: 1;
-		background-color: white;
-	}
-
-	@media (max-width: 1079px) {
-		.search_btn {
-			position: absolute;
-			right: 150px;
-			overflow: hidden;
-			z-index: 1;
-		}
-	}
-
-	@media (max-width: 691px) {
-		.search_btn {
-			position: absolute;
-			left: 0;
-			width: 100%;
-			height: 40px;
-			background-color: white;
-			overflow: hidden;
-			z-index: 1;
-			border: none;
-			border-bottom: 1px solid #000;
-		}
-
-		.search_btn input {
-			overflow: hidden;
-			width: 88% !important;
-		}
-
-		.search_btn img {
-			left: 90% !important;
-			margin-top: 6px;
-		}
-	}
-
-	.searchs {
-		cursor: pointer;
-	}
-
-	.search_btn input {
-		position: absolute;
-		top: 20px;
-		padding-left: 15px;
-		width: 88%;
-		height: 100%;
-		margin-top: -20px;
-		border: none;
-		outline: none;
-		overflow: hidden;
-	}
-
-	.search_btn img {
-		position: absolute;
-		width: 0.3rem;
-		left: 260px;
-		top: 0.02rem;
-	}
-
-
-    .lii{
-		width: 50%;
-		position: relative;
-		white-space: nowrap;
-		height: 0.3rem;
-		line-height: 0.3rem;
-		margin-bottom: 8px;
-	 }
-	.cny_bottom .lii .imgs {
-		position: absolute;
-		width: 0.28rem;
-		height: 0.17rem;
-		border: 0.01rem solid gainsboro;
-		top: 25%;
-		background-image:url(../../assets/img/sprite.png);
-		background-repeat: no-repeat;
-	}
-	.spantext{
-		position: absolute;
-		left: 28%;
-		font-weight: 100;
-		font-size: 11px;
-	}
-	.spantext:hover{
-		color: #0077AA;
-	}
-	.s1{
-		background-position: -198px -342px;
-	}
-	.s2{
-		background-position: -56px -364px;
-	}
-	.s3{
-		background-position: -28px -364px;
-	}
-	.s4{
-		background-position: 0 -364px;
-	}
-	.s5{
-		background-position: -254px -342px;
-	}
-	.s6{
-		background-position: -306px -244px;
-	}
-	.s7{
-		background-position: -282px -342px;
-	}
-	.s8{
-		background-position: -84px -364px;
-	}
-	.s9{
-		background-position: -226px -342px;
-	}
-	.s10{
-		background-position: -310px -342px;
-	}
-	.isactive{
-		background-color: #eee;
-	}
 </style>
 <style>
 .el-drawer.ltr {

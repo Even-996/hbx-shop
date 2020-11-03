@@ -46,6 +46,7 @@
 	}
 
 	@media (max-width: 768px) {
+
 		.container,
 		.container-sm {
 			width: 100%;
@@ -58,6 +59,7 @@
 	}
 
 	@media (min-width: 768px) {
+
 		.container,
 		.container-md,
 		.container-sm {

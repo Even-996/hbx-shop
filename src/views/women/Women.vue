@@ -1,6 +1,5 @@
 <template>
 	<div>
-    <News />
 		<div class="template">
 			<div class="container">
 				<div class="row flex">
@@ -68,8 +67,7 @@
 </template>
 
 <script>
-  import {getHomeMultData} from "../../network/home";
-  import News from "../../components/news"
+	import {getHomeMultData} from "../../network/home";
 
 	export default {
 		name: "Women",
@@ -99,10 +97,7 @@
 					{title:'W',value:['WE11DONE']},
 				]
 			}
-    },
-    components:{
-      News
-    },
+		},
 		created() {
 			this.loadData();
 		},
