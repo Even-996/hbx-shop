@@ -25,3 +25,10 @@ new Vue({
   render: h => h(App),
 
 }).$mount('#app')
+
+// //设置浏览器标题
+// Vue.directive('title',{
+//   inserted:function (el,binding){
+//     document.title = el.dataset.title
+//   }
+// })
