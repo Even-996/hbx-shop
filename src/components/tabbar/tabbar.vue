@@ -366,7 +366,6 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
 a {
   color: black;
 }
@@ -762,7 +761,6 @@ img {
 .search_btn input {
   position: absolute;
   top: 20px;
-  font-weight: 16px;
   padding-left: 15px;
   width: 88%;
   height: 100%;
@@ -853,7 +851,6 @@ img {
 .isactive {
   color: pink !important;
 }
-=======
 	a {
 		color: black;
 	}
@@ -935,7 +932,7 @@ img {
 		font-size: 15px;
 		padding: 15px ;
 		font-weight: 600;
-		
+
 	}
 	.drop_other_goods ul a li{
 		font-size: 14px!important;
@@ -1216,7 +1213,6 @@ img {
 	.search_btn input {
 		position: absolute;
 		top: 20px;
-		font-weight: 16px;
 		padding-left: 15px;
 		width: 88%;
 		height: 100%;
@@ -1293,7 +1289,6 @@ img {
 	.isactive{
 		background-color: #eee;
 	}
->>>>>>> ca162b9440351eeae2e8aa366416e799eeaec17d
 </style>
 <style>
 .el-drawer.ltr {
