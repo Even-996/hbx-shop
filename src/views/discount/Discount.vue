@@ -1,5 +1,6 @@
 <template>
 	<div>
+    <News />
     <Choose />
     <Man />
 <!--     <Woman />-->
@@ -12,13 +13,15 @@ import Choose from './choose'
 import Man from './man'
 import Woman from './woman'
 import Brand from '../brands/brand'
+import News from "../../components/news"
 	export default {
     name: "Discount",
     components:{
       Choose,
       Man,
       Woman,
-      Brand
+      Brand,
+      News
     }
 	} 
 </script>

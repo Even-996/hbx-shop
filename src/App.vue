@@ -24,6 +24,13 @@ export default {
 
 
 <style>
+@media (max-width: 768px){
+  .template{
+    margin: 0!important;
+    margin-top: 15px!important;
+    margin-bottom: 15px !important;
+  }
+}
 * {
   padding: 0;
   margin: 0;

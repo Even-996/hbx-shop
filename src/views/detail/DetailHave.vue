@@ -569,4 +569,7 @@
     text-align: center;
     color: gray;
 }
+.el-button{
+  padding: 12px 15px;
+}
 </style>

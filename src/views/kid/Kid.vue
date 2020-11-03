@@ -1,5 +1,6 @@
 <template>
 	<div>
+    <News />
 		<div class="template">
 			<div class="container" v-for="(item,index) in childCloses" :key="index">
 				<div class="row flex">
@@ -39,7 +40,8 @@
 </template>
 
 <script>
-	import {getHomeMultData} from "../../network/home";
+  import {getHomeMultData} from "../../network/home";
+  import News from "../../components/news"
 
 	export default {
 		name: "Kid",
@@ -64,7 +66,10 @@
 					{title:'W',value:['WOOD WOOD']},
 				]
 			}
-		},
+    },
+    components:{
+      News
+    },
 		created(){
 		 this.loadData()
 		},
