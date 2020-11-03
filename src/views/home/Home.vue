@@ -1,7 +1,6 @@
 
 <template>
 	<div class="main-body">
-    <News />
 		<div class="template">
 			<div class="container">
 				<div class="row flex">
@@ -93,12 +92,10 @@
 <script>
 import Brand from '../brands/brand'
 import {getHomeMultData} from '../../network/home'
-import News from "../../components/news"
 	export default {
     name: "Home",
     components:{
-      Brand,
-      News
+      Brand
     },
     created() {
     	this.loadData();
@@ -111,7 +108,7 @@ import News from "../../components/news"
     methods:{
     	loadData(){
     		getHomeMultData().then(res =>{
-    			this.homeCloses =  res.data.mancloses;
+    			this.homeCloses =  res.data.homecloses;
 			}).catch(error=>{
 
 			})

@@ -57,7 +57,7 @@
 		methods:{
 			loadData(){
 				getHomeMultData().then(res =>{
-					this.homeCloses =  res.data.homecloses;
+					this.homeCloses =  res.data.mancloses;
 				}).catch(error=>{
 
 				})
