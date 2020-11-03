@@ -426,7 +426,7 @@
 		font-size: 15px;
 		padding: 15px ;
 		font-weight: 600;
-		
+
 	}
 	.drop_other_goods ul a li{
 		font-size: 14px!important;
@@ -471,18 +471,25 @@
 		padding: 10px 20px 20px 30px;
 	}
 
-	.show_choose_goods::before {
-		position: absolute;
-		content: "";
-		display: block;
-		width: 0;
-		height: 0;
-		border-left: 7px solid transparent;
-		border-right: 7px solid transparent;
-		border-bottom: 7px solid rgb(15, 15, 15);
-		margin-left: -8px;
-		margin-top: -19px;
-	}
+	.show_choose_goods:before{
+    content:"";
+    border:10px solid transparent;
+    border-bottom-color:black;
+    position:absolute;
+    left:25px;
+    top:0;
+    margin-top:-20px;
+
+  }
+  .show_choose_goods:after{
+    content:"";
+    border:10px solid transparent;
+    border-bottom-color:white;
+    position: absolute;
+    top:0;
+    left:25px;
+    margin-top:-19px;
+  }
 
 	.choose_goods_show h4 {
 		font-weight: 800;
@@ -546,7 +553,7 @@
 		width: 200px;
 		border: 1px solid #000;
 		border-top: none;
-		margin-left: -80px;
+		margin-left: -14px;
 		padding-bottom: 10px;
 		z-index: 1;
 		background-color: white;
@@ -572,18 +579,25 @@
 		margin-left: 84px;
 	}
 
-	.hetp_box::before {
-		position: absolute;
-		content: "";
-		display: block;
-		width: 0;
-		height: 0;
-		border-left: 7px solid transparent;
-		border-right: 7px solid transparent;
-		border-bottom: 7px solid rgb(15, 15, 15);
-		margin-top: -8px;
-		margin-left: 85px;
-	}
+  .hetp_box:before{
+    content:"";
+    border:10px solid transparent;
+    border-bottom-color:black;
+    position:absolute;
+    left:20px;
+    top:0;
+    margin-top:-20px;
+
+  }
+  .hetp_box:after{
+    content:"";
+    border:10px solid transparent;
+    border-bottom-color:white;
+    position: absolute;
+    top:0;
+    left:20px;
+    margin-top:-19px;
+  }
 
 	.show_bags {
 		position: absolute;
@@ -609,18 +623,25 @@
 		text-decoration: none;
 	}
 
-	.show_bags::before {
-		position: absolute;
-		content: "";
-		display: block;
-		width: 0;
-		height: 0;
-		border-left: 7px solid transparent;
-		border-right: 7px solid transparent;
-		border-bottom: 7px solid rgb(15, 15, 15);
-		margin-top: -8px;
-		margin-left: 350px;
-	}
+	.show_bags:before{
+    content:"";
+    border:10px solid transparent;
+    border-bottom-color:black;
+    position:absolute;
+    left:335px;
+    top:0;
+    margin-top:-20px;
+
+  }
+  .show_bags:after{
+    content:"";
+    border:10px solid transparent;
+    border-bottom-color:white;
+    position: absolute;
+    top:0;
+    left:335px;
+    margin-top:-19px;
+  }
 
 	.cny {
 		width: 400px;
@@ -633,19 +654,25 @@
 		padding-left: 20px;
 	}
 
-	.cny::before {
-		position: absolute;
-		content: "";
-		display: block;
-		width: 0;
-		height: 0;
-		right: 15px;
-		border-left: 7px solid transparent;
-		border-right: 7px solid transparent;
-		border-bottom: 7px solid rgb(15, 15, 15);
-		top: -8px;
-		z-index: 2;
-	}
+	.cny:before{
+    content:"";
+    border:10px solid transparent;
+    border-bottom-color:black;
+    position:absolute;
+    left:340px;
+    top:0;
+    margin-top:-20px;
+
+  }
+  .cny:after{
+    content:"";
+    border:10px solid transparent;
+    border-bottom-color:white;
+    position: absolute;
+    top:0;
+    left:340px;
+    margin-top:-19px;
+  }
 
 	.cny_top ul li {
 		padding: 0;
@@ -791,8 +818,8 @@
 	}
 	.el-drawer:focus {
     outline: none;
-   } 
+   }
    .el-drawer.ltr :focus {
     outline: none;
-   } 
+   }
 </style>
