@@ -44,15 +44,15 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td class="product">
+                      <tr v-for="(item,index) in this.cartCloses" :key="index">
+                        <td class="product" >
                           <div class="media">
                             <div class="product-thumbnail">
-                              <a href=""><img src="https://image-cdn.hypb.st/http%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Ffa%2Fad%2FShoes_2-992NT_0-db10822ae513697a9f7113f69169.jpg?fit=max&q=90&w=120&h=156&v=1" alt="" class="img-fluid"></a>
+                              <a href=""><img  style="width: 100px;height: 100px" :src="item.img1" ></a>
                             </div>
                             <div class="media-body">
-                              <div class="brand"><a href="">New Balance</a></div>
-                              <div class="name"><a href="">M99NT</a></div>
+                              <div class="brand"><a href="">{{item.subname}}</a></div>
+                              <div class="name"><a href="">{{item.name}}</a></div>
                               <ul class="options list-unstyled">
                                 <li>尺吋: US 4.5 / W 6</li>
                               </ul>
@@ -61,29 +61,29 @@
                             </div>
                           </div>
                         </td>
-                        <td class="unit-price d-none d-md-table-cell">
-                          CNY 1675.12
-                        </td>
-                        <td class="unit-price d-none d-md-table-cell">
-                          CNY 167.52
-                        </td>
+<!--                        <td class="unit-price d-none d-md-table-cell">-->
+<!--                          CNY {{item.price}}-->
+<!--                        </td>-->
+<!--                        <td class="unit-price d-none d-md-table-cell">-->
+<!--                          CNY 167.52-->
+<!--                        </td>-->
                         <td class="quantity d-none d-md-table-cell">
                           <div class="quantity-control">
                             <div class="d-none d-md-block">
                               <div class="input-group">
                                 <span class="input-group-prepend">
-                                  <span type="button" class="btn btn-quantity">-</span>
+                                  <span type="button" class="btn btn-quantity" @click="decre(item)">-</span>
                                 </span>
-                                <input type="text" id="product-quantity-input" class="form-control" value="1">
+                                <input type="text" v-model="item.num" id="product-quantity-input" class="form-control" value="1">
                                 <span class="input-group-append">
-                                  <span type="button" class="btn btn-quantity">+</span>
+                                  <span type="button" class="btn btn-quantity" @click="incre(item)">+</span>
                                 </span>
                               </div>
                             </div>
                            </div>
                           <a href="#" class="remove d-none d-md-inline">移除</a>
                         </td>
-                        <td class="total text-center d-none d-md-table-cell">CNY 1842.63</td>
+                        <td class="total text-center d-none d-md-table-cell">CNY {{item.price * item.num}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -115,7 +115,7 @@
                       </table>
                       <div class="grand-total">
                         <span class="title">总价</span>
-                        <span class="amount">CNY 1976.49</span>
+                        <span class="amount">CNY {{total}}</span>
                       </div>
                       <a href="" class="checkout-btn btn btn-block btn-primary">前往结账</a>
                       <div class="coupons">
@@ -151,10 +151,51 @@
     name: "Bags",
     data () {
       return {
-        num:''
+        num:'',
+        cartCloses: []
+      }
+    },
+    created() {
+       if(this.$route.query)
+       {
+         if(localStorage.getItem("cartCloses")){
+           let carts = JSON.parse(localStorage.getItem("cartCloses"));
+           let flag = 0;
+           carts.forEach(cart => {
+             if(cart.id == this.$route.query.id)
+               flag = 1;
+           })
+           if(flag == 0)
+           {
+             carts.push(this.$route.query);
+             this.cartCloses = carts;
+           }
+
+         }else
+           if(this.$route.query)
+           this.cartCloses.push(this.$route.query);
+         localStorage.setItem("cartCloses",JSON.stringify(this.cartCloses));
+         console.log(this.cartCloses);
+       }
+
+    },
+      methods:{
+        decre(item){
+          if(item.num > 1)
+          item.num --;
+        },
+        incre(item){
+          item.num ++;
+        }
+      },
+      computed: {
+        total(){
+          return this.cartCloses.reduce(
+                  (c1, c2) =>  c1 + c2.price * c2.num,
+                  0);
+        }
       }
     }
-	}
 </script>
 
 <style scoped="scoped">
@@ -461,6 +502,7 @@
   }
   .media .product-thumbnail{
     width: 100px;
+    /*height: 100px;*/
     margin-right: 15px;
   }
   .img-fluid{

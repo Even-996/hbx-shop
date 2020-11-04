@@ -12,18 +12,23 @@
       <span>Or</span>
     </div>
     <p>以电邮地址登入</p>
-    <form action="#" method="post" class="form">
+    <div >
       <div class="form-group">
         <label for="username">电邮地址/用户名称</label>
-        <input type="text" id="username" name="_username" class="form-control" placeholder="请输入邮箱" value/>
+        <input type="text" id="username" v-model="email" name="_username" class="form-control" placeholder="请输入邮箱" value/>
       </div>
       <div class="form-group">
-        <label for="code" class="col-md-8" id="inputCode">请输入验证码</label>
+        <label for="code"  class="col-md-8" id="inputCode">请输入验证码</label>
         <div class="get-code">
           <div class="text-box">
-            <input type="text" id="code" name="_password" class="form-control" placeholder="点击发送验证码" value/>
+            <input type="text" id="code" v-model="code"  name="_password" class="form-control" placeholder="点击发送验证码" value/>
           </div>
-          <div id="getCode" class="col-md-4">获取验证码</div>
+          <div id="getCode" class="col-md-4">
+            <span @click="sendCode" v-if="getYanZheng">
+               获取验证码
+            </span>
+            <span v-else>{{countNum}}秒后重发</span>
+          </div>
         </div>
       </div>
       <div class="form-row">
@@ -40,17 +45,75 @@
           </div>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary btn-block" title="login" type="submit">登入</button>
+          <button class="btn btn-primary btn-block" @click="checkEmailAndCode" title="login" >登入</button>
         </div>
       </div>
-    </form>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "ExLogin.vue"
-}
+  import {sendEmail} from "../../../network/login";
+  import {sendEmailAndCode} from "../../../network/login";
+
+  export default {
+    name: "ExLogin.vue",
+    data() {
+      return {
+        email: "",
+        code: "",
+        getYanZheng: true,
+        countNum: 60,
+      }
+    },
+    methods: {
+      sendCode() {
+        sendEmail(this.email).then(res => {
+
+
+          this.getYanZheng = false;
+          setTime();
+
+          let _this = this;
+          let count = 60;
+
+          function setTime() {
+            if (count == 1) {
+              _this.getYanZheng = true;
+              return;
+            } else {
+              count--;
+            }
+
+            setTimeout(function () {
+              setTime()
+              _this.countNum = count;
+            }, 1000);
+          }
+
+        }).catch(err => {
+          this.$message.error("发送验证码失败");
+        })
+      },
+      checkEmailAndCode() {
+
+        sendEmailAndCode(this.email, this.code).then(res => {
+          if (res.data) {
+            // this.$store.state.phone = this.phone;
+            console.log(res.data);
+            localStorage.setItem("email", this.email);
+            this.$message.success("登录成功");
+            this.$router.push("/home");
+          } else {
+            this.$message.error("登录失败");
+          }
+
+        }).catch(err => {
+          this.$message.error("登录失败");
+        })
+      }
+    }
+  }
 </script>
 
 <style scoped>

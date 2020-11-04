@@ -178,7 +178,7 @@
             </div>
             <div class="choose_btn">
                 <el-button class="no_choose" v-show="!size">请选择一个尺码</el-button>
-                <el-button v-show="size">加入到购物袋</el-button>
+                <el-button  v-show="size">加入到购物袋</el-button>
                 <!-- <el-button :disabled="!radio1">前往付款</el-button> -->
             </div>
             <span class="hopes"><router-link to="#"><i class="iconfont icon-LQYyuanwangqingdan"></i> 加到我的愿望清单 <i class="iconfont icon-dayuhao"></i></router-link></span><br>
@@ -234,8 +234,6 @@
             this.itemClose = this.$route.query;
             this.img1.push(this.itemClose.img1,this.itemClose.img2,this.itemClose.img3,this.itemClose.img4,
                 this.itemClose.img5,this.itemClose.img6);
-            console.log(this.itemClose);
-            console.log(this.img1)
         },
         methods: {
             changeImg(index){
@@ -289,16 +287,14 @@
                 big.style.display='none'
             },
             changeNum(way){
-                console.log(way)
                 if(way == '-' && this.itemClose.num > 1)
                     this.itemClose.num --;
                 if(way == '+')
                     this.itemClose.num ++;
 
-                console.log(way);
             },
             transToGoShop(){
-                this.$router.push({path:'/bags'});
+                this.$router.push({path:'/bags',query:this.itemClose});
             }
         },
 

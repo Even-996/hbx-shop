@@ -3,7 +3,7 @@ import axios from 'axios'
 export function request(config) {
     //初始化一个实例
     const instance = axios.create({
-        baseURL: 'http://119.3.57.241:10086/hbx/api',
+        baseURL: 'http://localhost:10086/hbx/api',
         timeout: 5000
     })
     //axios的拦截器
