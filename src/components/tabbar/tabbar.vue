@@ -553,7 +553,7 @@
 		width: 200px;
 		border: 1px solid #000;
 		border-top: none;
-		margin-left: -14px;
+		margin-left: -84px;
 		padding-bottom: 10px;
 		z-index: 1;
 		background-color: white;
@@ -562,7 +562,7 @@
 	.hetp_box ul li {
 		clear: both;
 		padding: 0;
-		font-size: 12px;
+		font-size: 14px;
 		line-height: 30px;
 		margin-left: 73px;
 	}
@@ -572,7 +572,7 @@
 	}
 
 	.hetp_box ul li a:hover {
-		color: pink;
+		color: black;
 	}
 
 	.hetp_box ul li:nth-of-type(3) {
@@ -584,7 +584,7 @@
     border:10px solid transparent;
     border-bottom-color:black;
     position:absolute;
-    left:20px;
+    left:86px;
     top:0;
     margin-top:-20px;
 
@@ -595,7 +595,7 @@
     border-bottom-color:white;
     position: absolute;
     top:0;
-    left:20px;
+    left:86px;
     margin-top:-19px;
   }
 
