@@ -1,0 +1,65 @@
+{
+  "id": "2142978",
+  "name": "hbx",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5260069",
+      "name": "twitter",
+      "font_class": "twitter",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "5330645",
+      "name": "信封",
+      "font_class": "xinfeng",
+      "unicode": "e7aa",
+      "unicode_decimal": 59306
+    },
+    {
+      "icon_id": "6756291",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "8620090",
+      "name": "pinterest",
+      "font_class": "pinterest",
+      "unicode": "e7a8",
+      "unicode_decimal": 59304
+    },
+    {
+      "icon_id": "11215242",
+      "name": "google+",
+      "font_class": "google",
+      "unicode": "e6fc",
+      "unicode_decimal": 59132
+    },
+    {
+      "icon_id": "12579250",
+      "name": "facebook",
+      "font_class": "facebook",
+      "unicode": "e71a",
+      "unicode_decimal": 59162
+    },
+    {
+      "icon_id": "12579547",
+      "name": "tumblr",
+      "font_class": "tumblr",
+      "unicode": "e798",
+      "unicode_decimal": 59288
+    },
+    {
+      "icon_id": "12856616",
+      "name": "Instagram",
+      "font_class": "Instagram",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    }
+  ]
+}
