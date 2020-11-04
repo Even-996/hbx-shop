@@ -148,7 +148,7 @@ import News from "../../components/news"
 
 	@media (min-width: 992px) {
 		.container {
-			width: 1400px !important;
+			width: 1250px !important;
 		}
 		.flex {
 			display: flex;
